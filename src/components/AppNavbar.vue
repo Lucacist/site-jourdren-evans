@@ -1,9 +1,10 @@
 <script setup>
+import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
+const isMenuOpen = ref(false);
 
-// Liste des liens
 const links = [
   { label: "Accueil", path: "/" },
   { label: "Services", path: "/services" },
@@ -11,6 +12,14 @@ const links = [
   { label: "À propos", path: "/a-propos" },
   { label: "Contact", path: "/contact" },
 ];
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+
+const closeMenu = () => {
+  isMenuOpen.value = false;
+};
 </script>
 
 <template>
@@ -20,7 +29,17 @@ const links = [
       <span class="brand-subtitle">Terrassement</span>
     </div>
 
-    <div class="menu">
+    <button class="burger-btn" @click="toggleMenu" :class="{ active: isMenuOpen }">
+      <svg viewBox="0 0 32 32">
+        <path
+          class="line line-top-bottom"
+          d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+        ></path>
+        <path class="line" d="M7 16 27 16"></path>
+      </svg>
+    </button>
+
+    <div class="menu desktop-menu">
       <router-link
         v-for="link in links"
         :key="link.path"
@@ -30,19 +49,33 @@ const links = [
         {{ link.label }}
       </router-link>
     </div>
+
+    <transition name="slide-fade">
+      <div v-if="isMenuOpen" class="mobile-menu">
+        <router-link
+          v-for="link in links"
+          :key="link.path"
+          :to="link.path"
+          class="mobile-menu-item"
+          @click="closeMenu"
+        >
+          {{ link.label }}
+        </router-link>
+      </div>
+    </transition>
   </nav>
 </template>
 
 <style scoped>
-/* Conteneur principal */
+/* --- CONTENEUR PRINCIPAL --- */
 .navbar {
   max-width: 1250px;
   margin: 0 auto;
   padding: 1rem;
+  height: auto;
   display: flex;
-  justify-content: space-between; /* Écarte les éléments (Gauche - Centre - Droite) */
-  align-items: stretch; /* Force tous les enfants à prendre 100% de la hauteur */
-  color: #000;
+  justify-content: space-between;
+  align-items: center;
   position: sticky;
   top: 0;
   left: 0;
@@ -54,74 +87,198 @@ const links = [
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.5rem;
   border-radius: 0.8rem;
   cursor: pointer;
-  background-color: #ffffff3a;
-  min-width: 200px;
-  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.25); /* Glassmorphism léger */
+  backdrop-filter: blur(12px);
+  transition: transform 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+}
+.brand:hover {
+  background-color: rgba(255, 255, 255, 0.35);
 }
 
 .brand-title {
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.1;
+  color: #1a1a1a;
+  white-space: nowrap;
 }
 
 .brand-subtitle {
-  font-size: 0.85rem;
-  font-weight: 300;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #444;
 }
 
-/* --- MENU CENTRAL --- */
+/* --- MENU DESKTOP (STYLE "PILULE") --- */
 .menu {
   display: flex;
-  justify-content: center; /* Centre les liens horizontalement */
-  background-color: #ffffff3a;
-  border-radius: 0.8rem;
-  backdrop-filter: blur(10px);
-  height: auto;
-  padding: 0.4rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  /* Le style "Barre Pilule" */
+  background-color: rgba(255, 255, 255, 0.25); /* Glassmorphism léger */
+  backdrop-filter: blur(12px);
+  padding: 5px; /* Espace interne pour que le bouton blanc ne touche pas les bords */
+  border-radius: 0.8rem; /* Arrondi total */
+  gap: 5px; /* Espace entre les liens */
 }
 
 .menu-item {
   display: flex;
-  align-items: center; /* Centre le texte verticalement */
-  padding: 0rem 1rem;
-  height: auto;
+  align-items: center;
+  padding: 0.6rem 1.5rem; /* Boutons plus larges */
   text-decoration: none;
-  font-size: 1rem;
-  transition: background-color 0.2s;
-  color: #242424ff;
+  font-size: 0.95rem;
   font-weight: 600;
+  color: #2a2a2aff; /* Gris foncé pour le texte inactif */
+  border-radius: 0.5rem; /* Arrondi pour suivre le parent */
+  transition: all 0.3s ease;
 }
 
 .menu-item:hover {
   color: #000;
+  background-color: rgba(255, 255, 255, 0.5); /* Hover subtil */
 }
 
-/* C'est ici que la magie opère : Vue ajoute cette classe automatiquement au lien actif */
+/* --- L'ELEMENT ACTIF (Bouton Blanc) --- */
 .router-link-active {
-  background-color: #ffffff34;
-  border-radius: 0.6rem;
-  color: #000;
+  background-color: #ffffff4b !important; /* Blanc pur */
+  color: #000 !important; /* Texte noir */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Petite ombre pour le relief */
+  transform: scale(1.02); /* Très léger agrandissement */
 }
 
-/* --- BOUTON APPELER --- */
-.cta-button {
-  background-color: #f6c042; /* Jaune chantier */
+/* --- BOUTON BURGER (CORRIGÉ) --- */
+.burger-btn {
+  display: none; /* Caché sur PC */
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+  /* Centrage Flexbox strict */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 3rem;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-transform: uppercase;
+
+  /* Dimensions fixes du carré */
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 101;
   transition: background-color 0.2s;
 }
 
-.cta-button:hover {
-  background-color: #e0ac30;
+.burger-btn:active {
+  transform: scale(0.95);
+}
+
+/* SVG : Taille contrainte pour centrage parfait */
+.burger-btn svg {
+  width: 26px;
+  height: 26px;
+  display: block; /* Évite les décalages de ligne */
+  overflow: visible; /* Important pour que les lignes animées ne soient pas coupées */
+}
+
+.line {
+  fill: none;
+  stroke: #1a1a1a;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+/* Animation Active */
+.burger-btn.active svg {
+  transform: rotate(-45deg);
+}
+.burger-btn.active svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+/* --- MENU MOBILE --- */
+.mobile-menu {
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 1rem;
+  right: 1rem;
+  background-color: rgba(255, 255, 255, 0.25); /* Glassmorphism léger */
+  backdrop-filter: blur(20px);
+  padding: 1rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.mobile-menu-item {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 1rem;
+  transition: background-color 0.2s;
+}
+
+.mobile-menu-item:hover {
+  background-color: rgba(246, 192, 66, 0.2); /* Jaune très clair */
+}
+
+.mobile-menu-item.router-link-active {
+  color: black;
+}
+
+/* --- ANIMATIONS VUEJS --- */
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); /* Courbe fluide */
+}
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(-10px) scale(0.98);
+  opacity: 0;
+}
+
+/* --- RESPONSIVE --- */
+@media (min-width: 800px) {
+  .burger-btn {
+    display: none !important;
+  } /* Force hide desktop */
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
+@media (max-width: 799px) {
+  .desktop-menu {
+    display: none;
+  }
+  .burger-btn {
+    display: flex !important;
+  } /* Force show mobile */
+
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
 }
 </style>
