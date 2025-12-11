@@ -13,13 +13,14 @@ const services = ref([
     title: "VRD – Voirie & Réseaux Divers",
     icon: "pi pi-chart-pie", // Icône temporaire (forme ronde)
     description:
-      "Nous créons des extérieurs pratiques et durables : parkings, allées, accès véhicules et surfaces stabilisées, avec un rendu propre et soigné.",
+      "Nous réalisons tous vos réseaux : tranchées, gaines, raccordements et installations techniques pour assurer le bon fonctionnement de vos infrastructures.",
   },
   {
     title: "Aménagements extérieurs",
     icon: "pi pi-share-alt", // Icône temporaire (réseaux/connexions)
     description:
-      "Nous réalisons tous vos réseaux : tranchées, gaines, raccordements et installations techniques pour assurer le bon fonctionnement de vos infrastructures.",
+      "Nous créons des extérieurs pratiques et durables : parkings, allées, accès véhicules et surfaces stabilisées, avec un rendu propre et soigné.",
+
   },
 ]);
 </script>
@@ -48,9 +49,11 @@ const services = ref([
 <style scoped>
 /* Le fond Jaune Moutarde de l'image */
 .services-section {
-  background-color: #fbc02b; /* Le même jaune que tes boutons */
+  background-color: #fbc02b;
+  /* Le même jaune que tes boutons */
   padding: 3rem 2rem;
-  color: #1a1a1a; /* Noir presque pur pour le texte */
+  color: #1a1a1a;
+  /* Noir presque pur pour le texte */
   text-align: center;
   display: flex;
   gap: 2rem;
@@ -83,7 +86,8 @@ const services = ref([
 
 /* Style des icônes (Grosses et noires) */
 .service-icon {
-  font-size: 4rem; /* Très grand */
+  font-size: 4rem;
+  /* Très grand */
   margin-bottom: 1.5rem;
   color: black;
 }
@@ -98,8 +102,10 @@ const services = ref([
 .card-service p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #333; /* Gris très foncé pour le texte courant */
-  max-width: 350px; /* Limite la largeur du texte pour la lisibilité */
+  color: #333;
+  /* Gris très foncé pour le texte courant */
+  max-width: 350px;
+  /* Limite la largeur du texte pour la lisibilité */
   text-align: left;
 }
 
@@ -111,8 +117,10 @@ const services = ref([
   padding: 0.8rem 2.5rem;
   font-weight: bold;
   font-size: 1rem;
-  border-radius: 4px; /* Coins légèrement carrés comme sur l'image */
+  border-radius: 4px;
+  /* Coins légèrement carrés comme sur l'image */
 }
+
 :deep(.btn-dark:hover) {
   background-color: black !important;
 }
