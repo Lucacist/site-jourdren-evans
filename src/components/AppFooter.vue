@@ -204,6 +204,8 @@ const currentYear = new Date().getFullYear();
   .footer-container {
     grid-template-columns: 1fr; /* Une seule colonne sur mobile */
     text-align: center; /* Tout centré sur mobile */
+    gap: 1rem;
+    margin-bottom: 2rem;
   }
   .footer-bottom {
     flex-direction: column;

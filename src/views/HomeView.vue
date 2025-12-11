@@ -8,7 +8,7 @@ const router = useRouter();
 <template>
   <div class="home-container">
     <img
-      src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1920&auto=format&fit=crop"
+      src="/img/home/home-img.webp"
       alt="Chantier de terrassement Jourdren Evans"
       class="hero-background-image"
     />
@@ -158,5 +158,29 @@ const router = useRouter();
 }
 :deep(.btn-dark:hover) {
   background-color: black !important;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .content-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .content-flow p {
+    font-size: 1.2rem;
+  }
 }
 </style>

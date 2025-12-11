@@ -52,14 +52,17 @@ const services = ref([
   padding: 3rem 2rem;
   color: #1a1a1a; /* Noir presque pur pour le texte */
   text-align: center;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
 }
 
 .section-title {
   font-size: 3rem;
   margin-top: 0;
   font-weight: 800;
-  margin-bottom: 4rem;
   text-transform: capitalize;
+  margin-bottom: 0;
 }
 
 /* Grille de 3 colonnes */
@@ -67,8 +70,7 @@ const services = ref([
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3rem;
-  width: 100vw;
-  margin: 0 auto 4rem auto;
+  width: auto;
 }
 
 /* --- TA CLASSE "card-service" --- */
@@ -98,11 +100,7 @@ const services = ref([
   line-height: 1.6;
   color: #333; /* Gris très foncé pour le texte courant */
   max-width: 350px; /* Limite la largeur du texte pour la lisibilité */
-}
-
-/* Bouton Noir (comme sur l'image) */
-.button-container {
-  margin-top: 2rem;
+  text-align: left;
 }
 
 /* On personnalise le bouton PrimeVue pour qu'il soit noir/gris foncé */
@@ -117,5 +115,20 @@ const services = ref([
 }
 :deep(.btn-dark:hover) {
   background-color: black !important;
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 2rem 1rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .services-grid {
+    gap: 1rem;
+  }
 }
 </style>

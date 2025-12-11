@@ -20,9 +20,9 @@ const testimonials = ref([
 <template>
     <section class="testimonials-section">
         <div class="testimonials-grid">
-            
+
             <div v-for="(item, index) in testimonials" :key="index" class="testimonial-card">
-                <i class="pi pi-question-circle quote-icon"></i> 
+                <i class="pi pi-question-circle quote-icon"></i>
                 <h3 class="client-name">{{ item.name }}</h3>
                 <p class="client-text">{{ item.text }}</p>
             </div>
@@ -33,14 +33,16 @@ const testimonials = ref([
 
 <style scoped>
 .testimonials-section {
-    background-color: #fbc02b; /* Le jaune moutarde exact */
+    background-color: #fbc02b;
+    /* Le jaune moutarde exact */
     padding: 4rem 2rem;
     color: white;
 }
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 colonnes égales */
     max-width: 1400px;
     margin: 0 auto;
     /* Pas de 'gap' ici car on veut gérer les bordures nous-mêmes */
@@ -52,9 +54,9 @@ const testimonials = ref([
     align-items: center;
     text-align: center;
     padding: 0 2rem;
-    
+
     /* La bordure noire fine à droite de chaque carte */
-    border-right: 1px solid rgba(0, 0, 0, 0.1); 
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* On enlève la bordure du dernier élément pour ne pas fermer la grille */
@@ -67,31 +69,43 @@ const testimonials = ref([
     .testimonials-grid {
         grid-template-columns: 1fr;
     }
+
     .testimonial-card {
         border-right: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Bordure en bas sur mobile */
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        /* Bordure en bas sur mobile */
         padding: 2rem 0;
     }
+
     .testimonial-card:last-child {
         border-bottom: none;
+    }
+
+    .testimonials-section {
+        padding: 0rem 2rem;
     }
 }
 
 .quote-icon {
-    font-size: 3rem; /* Gros guillemets */
-    margin-bottom: 1.5rem;
-    color: black; 
+    font-size: 3rem;
+    /* Gros guillemets */
+    color: black;
     /* Astuce : Pour avoir exactement les guillemets "66" noirs pleins, 
        tu devras peut-être utiliser une image SVG ou 'pi-quote-left' si PrimeIcons est à jour */
-    content: "\e931"; /* Code spécifique si besoin, mais la classe suffit généralement */
+    content: "\e931";
+    /* Code spécifique si besoin, mais la classe suffit généralement */
+    height: 40px;
+
 }
 
 /* Remplacement de l'icône par le vrai caractère guillemet si l'icone ne plait pas */
 .quote-icon::before {
-    content: "\201C"; /* Caractère unicode pour gros guillemets */
+    content: "\201C";
+    /* Caractère unicode pour gros guillemets */
     font-family: serif;
     font-size: 6rem;
     line-height: 1;
+    height: 40px;
 }
 
 .client-name {
@@ -105,7 +119,8 @@ const testimonials = ref([
     font-size: 0.95rem;
     line-height: 1.6;
     font-weight: 500;
-    max-width: 400px; /* Pour éviter les lignes trop longues */
+    max-width: 400px;
+    /* Pour éviter les lignes trop longues */
     text-align: justify;
 
 }

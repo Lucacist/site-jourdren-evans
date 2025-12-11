@@ -85,9 +85,16 @@
 @media (max-width: 768px) {
     .info-grid {
         text-align: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
     }
     .hours-grid {
         justify-content: center;
+    }
+    .main-title {
+        font-size: 2.5rem;
+        margin-top: 0;
+        margin-bottom: 2rem;
     }
 }
 
