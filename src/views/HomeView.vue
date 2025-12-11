@@ -163,6 +163,7 @@ const router = useRouter();
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2.5rem;
+    margin: 0 1rem;
   }
 
   .hero-content p {
