@@ -282,9 +282,7 @@
 }
 
 @media (max-width: 768px) {
-  .hero-section h1 {
-    font-size: 1.8rem;
-  }
+
 
   .hero-content {
     padding-left: 20px;

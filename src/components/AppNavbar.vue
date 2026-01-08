@@ -187,18 +187,14 @@ const closeMenu = () => {
 /* --- MENU MOBILE --- */
 .mobile-menu {
   position: absolute;
-  top: calc(100% + 15px);
-  left: 1rem;
-  right: 1rem;
-  background-color: #0000002f; /* Glassmorphism léger */
-  backdrop-filter: blur(20px);
+  top: 80%;
+  width: 100%;
+  left: 0;
   padding: 1rem;
-  border-radius: 0.8rem;
+  background-color: #fbc02b; /* Glassmorphism léger */
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .mobile-menu-item {

@@ -37,7 +37,7 @@ const router = useRouter();
     </div>
     <div class="content-flow">
       <div class="flexx">
-        <div class="content-title">Apprendre a nous connaitre</div>
+        <h2 class="content-title">Apprendre a nous connaitre</h2>
         <p>
           Entreprise spécialisée dans le terrassement, les aménagements extérieurs et les
           travaux de réseaux, JOURDREN T.P. met son savoir-faire et sa rigueur au service
