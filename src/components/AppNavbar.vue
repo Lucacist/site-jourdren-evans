@@ -1,8 +1,9 @@
 <script setup>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { ref, computed } from "vue";
+import { useRouter, useRoute } from "vue-router";
 
 const router = useRouter();
+const route = useRoute();
 const isMenuOpen = ref(false);
 
 const links = [
@@ -20,6 +21,13 @@ const toggleMenu = () => {
 const closeMenu = () => {
   isMenuOpen.value = false;
 };
+
+// Classe CSS selon la page actuelle
+const menuClass = computed(() => {
+  if (route.path === '/') return 'menu-home';
+  if (route.path === '/contact') return 'menu-contact';
+  return 'menu-other';
+});
 </script>
 
 <template>
@@ -48,7 +56,7 @@ const closeMenu = () => {
     </div>
 
     <transition name="slide-fade">
-      <div v-if="isMenuOpen" class="mobile-menu">
+      <div v-if="isMenuOpen" class="mobile-menu" :class="menuClass">
         <router-link v-for="link in links" :key="link.path" :to="link.path" class="mobile-menu-item" @click="closeMenu">
           {{ link.label }}
         </router-link>
@@ -201,15 +209,31 @@ const closeMenu = () => {
   left: 0;
   padding: 1rem;
   background-color: #fbc02b;
-  /* Glassmorphism léger */
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Transparent sur Home */
+.mobile-menu.menu-home {
+  background-color: #ffffff00;
+  backdrop-filter: blur(10px);
+}
+
+/* Blanc sur Contact */
+.mobile-menu.menu-contact {
+  background-color: #ffffff;
+}
+
+/* Jaune sur les autres pages (Services, Projets, À propos) */
+.mobile-menu.menu-other {
+  background-color: #fbc02b;
 }
 
 .mobile-menu-item {
   text-decoration: none;
-  color: #333;
+  color: #000;
   font-weight: 600;
   padding: 1rem;
   text-align: center;
