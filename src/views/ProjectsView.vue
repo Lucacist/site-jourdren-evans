@@ -186,4 +186,10 @@ const projects = ref([
   color: #ddd; /* Gris très clair */
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .projects-grid {
+    padding: 0;
+  }
+}
 </style>
