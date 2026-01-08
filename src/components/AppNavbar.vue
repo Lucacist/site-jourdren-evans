@@ -25,8 +25,7 @@ const closeMenu = () => {
 <template>
   <nav class="navbar">
     <div class="brand" @click="router.push('/')">
-      <span class="brand-title">Jourdren Evans</span>
-      <span class="brand-subtitle">Terrassement</span>
+      <img src="/img/home/logo.svg" alt="" srcset="">
     </div>
 
     <button class="burger-btn" @click="toggleMenu" :class="{ active: isMenuOpen }">
@@ -69,14 +68,14 @@ const closeMenu = () => {
 <style scoped>
 /* --- CONTENEUR PRINCIPAL --- */
 .navbar {
-  max-width: 1250px;
   margin: 0 auto;
+  width: 100%;
   padding: 1rem;
-  height: auto;
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 100;
@@ -90,28 +89,11 @@ const closeMenu = () => {
   padding: 0.8rem 1.5rem;
   border-radius: 0.8rem;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.25); /* Glassmorphism léger */
-  backdrop-filter: blur(12px);
-  transition: transform 0.2s;
-    border: 1px solid rgba(255, 255, 255, 0.07);
-
-}
-.brand:hover {
-  background-color: rgba(255, 255, 255, 0.35);
 }
 
-.brand-title {
-  font-weight: 800;
-  font-size: 1.2rem;
-  line-height: 1.1;
-  color: #1a1a1a;
-  white-space: nowrap;
-}
-
-.brand-subtitle {
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: #444;
+.brand img {
+  height: 50px;
+  width: auto;
 }
 
 /* --- MENU DESKTOP (STYLE "PILULE") --- */
@@ -119,13 +101,7 @@ const closeMenu = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-
-  /* Le style "Barre Pilule" */
-  background-color: rgba(255, 255, 255, 0.25); /* Glassmorphism léger */
-  backdrop-filter: blur(12px);
   padding: 5px; /* Espace interne pour que le bouton blanc ne touche pas les bords */
-  border-radius: 0.8rem; /* Arrondi total */
   gap: 5px; /* Espace entre les liens */
 }
 
@@ -136,19 +112,20 @@ const closeMenu = () => {
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #2a2a2aff; /* Gris foncé pour le texte inactif */
-  border-radius: 0.5rem; /* Arrondi pour suivre le parent */
+  background-color: #0000002f; /* Noir très transparent */
+  backdrop-filter: blur(12px);
+  color: #fff; /* Gris foncé pour le texte inactif */
+  border-radius: 50rem; /* Arrondi pour suivre le parent */
   transition: all 0.3s ease;
 }
 
 .menu-item:hover {
   color: #000;
-  background-color: rgba(255, 255, 255, 0.5); /* Hover subtil */
 }
 
 /* --- L'ELEMENT ACTIF (Bouton Blanc) --- */
 .router-link-active {
-  background-color: #ffffff4b !important; /* Blanc pur */
+  background-color: #6e6e6e2f !important; /* Blanc pur */
   color: #000 !important; /* Texte noir */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Petite ombre pour le relief */
   transform: scale(1.02); /* Très léger agrandissement */
@@ -156,22 +133,16 @@ const closeMenu = () => {
 
 /* --- BOUTON BURGER (CORRIGÉ) --- */
 .burger-btn {
-  display: none; /* Caché sur PC */
-    border: 1px solid rgba(255, 255, 255, 0.07);
-
-  /* Centrage Flexbox strict */
+  display: none;
   display: flex;
+  border: none;
   align-items: center;
   justify-content: center;
-
-  /* Dimensions fixes du carré */
   width: 48px;
   height: 48px;
   padding: 0;
   margin: 0;
-
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(12px);
+  background-color: transparent;
   border-radius: 12px;
   cursor: pointer;
   z-index: 101;
@@ -184,15 +155,15 @@ const closeMenu = () => {
 
 /* SVG : Taille contrainte pour centrage parfait */
 .burger-btn svg {
-  width: 26px;
-  height: 26px;
+  width: 40px;
+  height: 40px;
   display: block; /* Évite les décalages de ligne */
   overflow: visible; /* Important pour que les lignes animées ne soient pas coupées */
 }
 
 .line {
   fill: none;
-  stroke: #1a1a1a;
+  stroke: #fff;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3;
@@ -219,7 +190,7 @@ const closeMenu = () => {
   top: calc(100% + 15px);
   left: 1rem;
   right: 1rem;
-  background-color: rgba(255, 255, 255, 0.25); /* Glassmorphism léger */
+  background-color: #0000002f; /* Glassmorphism léger */
   backdrop-filter: blur(20px);
   padding: 1rem;
   border-radius: 0.8rem;

@@ -21,8 +21,7 @@ const route = useRoute();
 
 /* Cette classe ne s'appliquera plus sur la page d'accueil ! */
 .page-content {
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0;
 }
 </style>

@@ -8,7 +8,7 @@ const router = useRouter();
 <template>
   <div class="home-container">
     <img
-      src="/img/home/home-img.webp"
+      src="/img/home/home-img.png"
       alt="Chantier de terrassement Jourdren Evans"
       class="hero-background-image"
     />
@@ -73,7 +73,7 @@ const router = useRouter();
 .hero-content {
   position: relative;
   z-index: 1;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,15 +83,17 @@ const router = useRouter();
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 900;
-  margin-bottom: 1rem;
+  font-family: Anton;
+  margin-bottom: 0rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .hero-content p {
   font-size: 1.3rem;
   margin-bottom: 2.5rem;
+  font-family: Anton;
   color: #f0f0f0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }

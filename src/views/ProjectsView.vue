@@ -99,11 +99,10 @@ const projects = ref([
 
 .page-header {
   text-align: center;
-  padding: 1rem;
-  background-color: #fbc02b;
-  border: 2px solid #fdedc861;
-  border-radius: 0.6rem;
+  padding: 5rem 1rem 1rem 1rem;
+  background:#fbc02b;
   margin-bottom: 2rem;
+  color: #000;
 }
 
 .page-header h1 {
