@@ -60,7 +60,9 @@
             ></textarea>
           </div>
 
-          <button type="submit" class="submit-btn">Envoyer</button>
+          <button type="submit" class="submit-btn" :disabled="isSubmitting">
+            {{ isSubmitting ? 'Envoi en cours...' : 'Envoyer' }}
+          </button>
         </form>
       </div>
 
@@ -83,17 +85,63 @@ const form = ref({
   message: ''
 })
 
-const handleSubmit = () => {
-  console.log('Form submitted:', form.value)
-  // Ici vous pourrez ajouter la logique d'envoi du formulaire
-  alert('Merci pour votre message ! Nous vous contacterons bientôt.')
-  // Réinitialiser le formulaire
-  form.value = {
-    name: '',
-    address: '',
-    email: '',
-    subject: '',
-    message: ''
+const isSubmitting = ref(false)
+const submitStatus = ref(null) // 'success', 'error', null
+
+// Clé d'accès Web3Forms - À créer sur https://web3forms.com avec l'email joudren.tp@gmail.com
+const WEB3FORMS_ACCESS_KEY = '1429e440-ed53-446d-aadc-779b06b86e4c'
+
+const handleSubmit = async () => {
+  isSubmitting.value = true
+  submitStatus.value = null
+
+  try {
+    // Préparer les données pour Web3Forms
+    const formData = new FormData()
+    formData.append('access_key', WEB3FORMS_ACCESS_KEY)
+    formData.append('name', form.value.name)
+    formData.append('email', form.value.email)
+    formData.append('subject', form.value.subject || 'Demande de devis')
+    
+    // Composer le message avec tous les détails
+    const fullMessage = `
+Adresse du chantier: ${form.value.address || 'Non spécifiée'}
+
+Message:
+${form.value.message || 'Aucun message'}
+    `
+    formData.append('message', fullMessage)
+    formData.append('redirect', 'false')
+
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+
+    const data = await response.json()
+
+    if (data.success) {
+      submitStatus.value = 'success'
+      alert('Merci pour votre message ! Nous vous contacterons bientôt.')
+      
+      // Réinitialiser le formulaire
+      form.value = {
+        name: '',
+        address: '',
+        email: '',
+        subject: '',
+        message: ''
+      }
+    } else {
+      submitStatus.value = 'error'
+      alert('Une erreur est survenue. Veuillez réessayer.')
+    }
+  } catch (error) {
+    submitStatus.value = 'error'
+    alert('Une erreur est survenue. Veuillez réessayer.')
+    console.error('Erreur lors de l\'envoi:', error)
+  } finally {
+    isSubmitting.value = false
   }
 }
 </script>
@@ -204,6 +252,11 @@ const handleSubmit = () => {
 
 .submit-btn:hover {
   background: #e64a19;
+}
+
+.submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
 }
 
 /* Image Section */
