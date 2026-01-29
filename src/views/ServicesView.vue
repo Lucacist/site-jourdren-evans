@@ -48,8 +48,8 @@
 
         </div>
         <h2>VRD – Voirie & Réseaux Divers</h2>
-        <p>Nous prenons en charge l'installation de tous vos réseaux : réseaux électriques (avec pose de TPC et câbles),
-          réseaux télécom, fibre, VDI, ainsi que les réseaux d'eaux usées et d'eaux pluviales. JOURDREN T.P. réalise les
+        <p>Nous prenons en charge l'installation de tous vos réseaux : réseaux électriques (avec pose de TPC),
+          réseaux télécom, fibre, ainsi que les réseaux d'eaux usées et d'eaux pluviales. JOURDREN T.P. réalise les
           tranchées techniques, la pose de gaines et fourreaux, les regards béton ou PVC, les tabourets, les chambres de
           tirage et les raccordements en limite de propriété.</p>
         <p>Nous mettons également en place les grillages avertisseurs, les canalisations CR4 et les fourreaux gaz. Nos
@@ -72,8 +72,10 @@
 
         </div>
         <h2>Assainissement individuel</h2>
-        <p>Nous installons et mettons en service tous les systèmes d'assainissement non collectif : fosses toutes eaux,
-          micro-stations, stations de relevage, filtres, tranchées d'épandage, lits filtrants et zones d'épandage.</p>
+        <p>Nous installons et mettons en service tous les systèmes d'assainissement non collectif : neuf au rénovation,
+          fosses toutes eaux,
+          micro-stations, stations de relevage, filtres compactes, épandage paysagé , lits filtrants et zones
+          d'épandage, ainsi que l'étude de sol d'aissainnissemnt individuel.</p>
         <p>Nous réalisons le terrassement complet, la pose du matériel, les raccordements EU/EP, le remblaiement en
           sable compacté et les réglages de niveau.</p>
         <p>JOURDREN T.P. s'assure que votre installation soit parfaitement dimensionnée, conforme et durable, adaptée à
@@ -104,7 +106,9 @@
         </div>
         <h2>Eaux pluviales et drainage</h2>
         <p>Pour gérer efficacement les eaux pluviales et protéger votre maison, nous installons des drains
-          périphériques, des drains agricoles, des tranchées drainantes, des zones d'épandage, des caniveaux et des
+          périphériques, des tranchées drainantes, des zones d'épandage, des caniveaux, des récupérateur d'eau de pluie
+          toutes dimension, des réserves incendies enterrer sous espaces vert ou voirries avec avis technique CCPAT et
+          des
           réseaux EP complets.</p>
         <p>Nous réalisons les tranchées, posons les tuyaux, le géotextile, les graviers et nous assurons les
           raccordements nécessaires. Ces solutions permettent une évacuation maîtrisée de l'eau, évitent l'humidité et
@@ -124,8 +128,7 @@
 
         </div>
         <h2>Aménagements extérieurs</h2>
-        <p>JOURDREN T.P. vous accompagne pour l'aménagement complet de vos extérieurs : création de parkings en gravier
-          ou tout-venant, réalisation d'allées, accès véhicules, préparation de surfaces, pose de géotextile, réglage et
+        <p>JOURDREN T.P. vous accompagne pour l'aménagement complet de vos extérieurs : création de parkings en gravier, tout-venant ou bicouche (différent colorie), réalisation d'allées, accès véhicules, préparation de surfaces, pose de géotextile, réglage et
           compactage.</p>
         <p>Nous assurons également la mise en forme de surfaces stabilisées pour véhicules, les travaux de nivellement
           et l'amélioration de l'accès à votre propriété. Nous allions robustesse, fonctionnalité et finitions soignées.
@@ -150,8 +153,8 @@
           </svg>
 
         </div>
-        <h2>Abattage et préparation du terrain</h2>
-        <p>Avant travaux, nous assurons l'abattage d'arbres, l'ébranchage, le tronçonnage et l'évacuation des végétaux.
+        <h2>Démolition et préparation du terrain</h2>
+        <p>Avant travaux, nous assurons l'abattage d'arbres, l'ébranchage, la démolition, les desouchages et l'évacuation des végétaux.
         </p>
         <p>Nous intervenons également pour le débroussaillage, la mise à niveau du terrain, la sécurisation des zones et
           la préparation complète des espaces à construire. Cette étape essentielle garantit un terrain propre, dégagé
@@ -174,7 +177,7 @@
 .hero-section {
   text-align: center;
   padding: 5rem 1rem 1rem 1rem;
-  background:#fbc02b;
+  background: #fbc02b;
   margin-bottom: 2rem;
   color: #000;
 }

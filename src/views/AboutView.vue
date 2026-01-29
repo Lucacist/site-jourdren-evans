@@ -31,8 +31,6 @@
             sécurisées et réalisées selon les normes du BTP. Notre équipe maîtrise les contraintes du terrain, les
             exigences techniques et les impératifs des chantiers modernes.</p>
 
-          <p>Cet espace est idéal pour raconter l'histoire de votre entreprise.</p>
-
           <p>Chez JOURDREN T.P., nous mettons un point d'honneur à offrir un travail de qualité, fiable et durable.
             Notre objectif est de préparer chaque terrain pour qu'il devienne une base solide, stable et prête à
             accueillir vos projets : construction, aménagement ou extension.</p>

@@ -78,7 +78,7 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <div class="copyright">
-      <p>© {{ currentYear }} par Jourdren Evans. Créé avec Vue.js</p>
+      <p>© {{ currentYear }} par Jourdren Evans</p>
     </div>
   </footer>
 </template>
