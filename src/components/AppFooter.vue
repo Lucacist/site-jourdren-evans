@@ -30,13 +30,13 @@ const currentYear = new Date().getFullYear();
         <p>27460 Alizay</p>
         <br />
         <p>02.32.92.24.29</p>
-        <p>info@monsite.fr</p>
+        <p>site-jourdren-evans.vercel.app/a-propos</p>
       </div>
 
       <div class="footer-col">
         <h3 class="col-title">Réseaux sociaux</h3>
         <div class="social-links">
-          <a href="#">Facebook</a>
+          <a href="https://www.facebook.com/profile.php?id=100077686390667">Facebook</a>
           <a href="#">Instagram</a>
         </div>
       </div>
@@ -44,7 +44,7 @@ const currentYear = new Date().getFullYear();
       <div class="footer-col">
         <h3 class="col-title">Questions</h3>
         <p class="question-text">
-          Pour vos questions ou félicitations, veuillez appeler le : 06.18.04.30.08
+          Pour vos questions, veuillez appeler le : 06.18.04.30.08
         </p>
         <Button class="btn-secondary" @click="router.push('/contact')">
           Nous contacter

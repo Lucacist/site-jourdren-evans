@@ -15,7 +15,10 @@ const router = createRouter({
     { path: '/projets', name: 'projects', component: ProjectsView },
     { path: '/a-propos', name: 'about', component: AboutView },
     { path: '/contact', name: 'contact', component: ContactView },
-  ]
+  ],
+  scrollBehavior() {
+    return { top: 0 };
+  }
 })
 
 export default router

@@ -135,14 +135,14 @@
         </p>
       </div>
       <div class="service-image">
-        <img src="/img/services/5.avif" alt="Équipe de chantier">
+        <img src="/img/services/amenagement.png" alt="Équipe de chantier">
       </div>
     </section>
 
     <!-- Service 6 - Abattage et préparation du terrain -->
     <section class="service-block marge ">
       <div class="service-image">
-        <img src="/img/services/6.avif" alt="Consultation chantier">
+        <img src="/img/projet/image3.jpeg" alt="Consultation chantier">
       </div>
       <div class="service-content white">
         <div class="service-icon">

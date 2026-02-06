@@ -11,22 +11,22 @@ const projects = ref([
   {
     title: "Pose de bordure et gravel",
     type: "image",
-    src: "/img/projet/IMG_7820.jpg"
+    src: "/img/projet/bordure.png"
   },
   {
     title: "Réalisation d'un bicouche",
     type: "image",
-    src: "/img/projet/img2.jpeg"
+    src: "/img/projet/bicouche.png"
   },
   {
     title: "Réalisation parking en fraisa",
     type: "image",
-    src: "/img/projet/img4.jpg"
+    src: "/img/projet/fraisa.png"
   },
   {
     title: "Etalement terres et parking",
     type: "image",
-    src: "/img/projet/img3.jpeg"
+    src: "/img/services/amenagement.png"
   },
   {
     title: "Chemin en gravel et étalement des terres",

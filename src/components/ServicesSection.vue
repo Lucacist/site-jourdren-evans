@@ -41,7 +41,7 @@ const services = ref([
     </div>
 
     <div class="button-container">
-      <Button label="Voir plus" class="btn-dark" />
+      <RouterLink to="/services" class="btn-dark">Voir plus</RouterLink>
     </div>
   </section>
 </template>
@@ -59,6 +59,7 @@ const services = ref([
   gap: 2rem;
   flex-direction: column;
 }
+
 
 .section-title {
   font-size: 3rem;
@@ -118,6 +119,7 @@ const services = ref([
   font-weight: bold;
   font-size: 1rem;
   border-radius: 4px;
+  text-decoration: none;
   /* Coins légèrement carrés comme sur l'image */
 }
 

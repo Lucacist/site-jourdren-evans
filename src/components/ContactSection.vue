@@ -20,11 +20,11 @@
                 <p>02.32.92.24.29</p>
                 <p>06.18.04.30.08</p>
                 <br>
-                <p>info@monsite.fr</p>
+                <p>site-jourdren-evans.vercel.app/a-propos</p>
                 
                 <div class="social-icons">
-                    <i class="pi pi-facebook" style="font-size: 1.5rem"></i>
-                    <i class="pi pi-instagram" style="font-size: 1.5rem"></i>
+                    <a class="pi pi-facebook" style="font-size: 1.2rem; color: black; text-decoration: none;" href="https://www.facebook.com/profile.php?id=100077686390667"></a>
+                    <a class="pi pi-instagram" style="font-size: 1.2rem; color: black; text-decoration: none;" href="https://www.instagram.com/yourprofile"></a>
                 </div>
             </div>
 

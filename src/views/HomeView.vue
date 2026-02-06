@@ -7,29 +7,16 @@ const router = useRouter();
 
 <template>
   <div class="home-container">
-    <img
-      src="/img/home/home-img.png"
-      alt="Chantier de terrassement Jourdren Evans"
-      class="hero-background-image"
-    />
+    <img src="/img/home/home-img.png" alt="Chantier de terrassement Jourdren Evans" class="hero-background-image" />
 
     <div class="hero-content">
       <h1>Votre terrain, Notre expertise</h1>
       <p>Entreprise familiale depuis 2000</p>
 
       <div class="hero-buttons">
-        <Button
-          label="Voir les Projets"
-          class="btn-primary"
-          @click="router.push('/projets')"
-        />
+        <Button label="Voir les Projets" class="btn-primary" @click="router.push('/projets')" />
 
-        <Button
-          label="Nous contacter"
-          class="btn-secondary"
-          outlined
-          @click="router.push('/contact')"
-        />
+        <Button label="Nous contacter" class="btn-secondary" outlined @click="router.push('/contact')" />
       </div>
     </div>
     <div class="content-flow">
@@ -43,7 +30,7 @@ const router = useRouter();
           travaux de réseaux, JOURDREN T.P. met son savoir-faire et sa rigueur au service
           de vos projets pour garantir des chantiers solides, propres et durables.
         </p>
-        <Button label="Lire plus" class="btn-dark" />
+        <RouterLink to="/a-propos" class="btn-dark">Lire plus</RouterLink>
       </div>
     </div>
     <TestimonialsSection />
@@ -111,9 +98,11 @@ const router = useRouter();
   padding: 0.8rem 2rem;
   font-size: 1.1rem;
 }
+
 .btn-primary:hover {
   background-color: #fbc02b !important;
 }
+
 .btn-secondary {
   color: white !important;
   border: 2px solid white !important;
@@ -121,27 +110,35 @@ const router = useRouter();
   padding: 0.8rem 2rem;
   font-size: 1.1rem;
 }
+
 .btn-secondary:hover {
   background-color: white !important;
   color: #333 !important;
 }
+
 .content-flow {
   position: relative;
-  z-index: 2; /* Important : Doit être au-dessus de l'image fixe (z-index: -1 ou 0) */
-  background-color: white; /* Ou transparent selon le design */
+  z-index: 2;
+  /* Important : Doit être au-dessus de l'image fixe (z-index: -1 ou 0) */
+  background-color: white;
+  /* Ou transparent selon le design */
   color: #000;
 }
+
 .content-title {
   font-size: 3rem;
   margin-top: 0;
   font-weight: 800;
   margin-bottom: 4rem;
 }
+
 .content-flow p {
   font-size: 1.4rem;
   line-height: 1.6;
-  color: #333; /* Gris très foncé pour le texte courant */
+  color: #333;
+  /* Gris très foncé pour le texte courant */
 }
+
 .flexx {
   padding: 3rem 2rem;
   max-width: 1200px;
@@ -156,8 +153,11 @@ const router = useRouter();
   padding: 0.8rem 2.5rem;
   font-weight: bold;
   font-size: 1rem;
-  border-radius: 4px; /* Coins légèrement carrés comme sur l'image */
+  border-radius: 4px;
+  text-decoration: none;
+  /* Coins légèrement carrés comme sur l'image */
 }
+
 :deep(.btn-dark:hover) {
   background-color: black !important;
 }
