@@ -11,7 +11,7 @@ const router = useRouter();
 
     <div class="hero-content">
       <h1>Votre terrain, Notre expertise</h1>
-      <p>Entreprise familiale depuis 2000</p>
+      <p>Entreprise familiale depuis 1973</p>
 
       <div class="hero-buttons">
         <Button label="Voir les Projets" class="btn-primary" @click="router.push('/projets')" />

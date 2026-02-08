@@ -29,7 +29,7 @@
           aux normes du BTP.</p>
       </div>
       <div class="service-image">
-        <img src="/img/services/1.avif" alt="Architecture moderne">
+        <img src="/img/services/terrassement.png" alt="Architecture moderne">
       </div>
     </section>
 
@@ -81,8 +81,10 @@
         <p>JOURDREN T.P. s'assure que votre installation soit parfaitement dimensionnée, conforme et durable, adaptée à
           la nature de votre sol et aux besoins de votre logement.</p>
       </div>
-      <div class="service-image">
-        <img src="/img/services/3.avif" alt="Chantier">
+      <div class="service-image" style="display: flex; flex-direction: row;">
+        <img src="/img/services/Assainissement.jpg" alt="Chantier" style="max-height: 750px; flex: 1; width: 50%;">
+        <img src="/img/services/assainissement2.jpeg" alt="Chantier" style="max-height: 750px; flex: 1; width: 50%;">
+
       </div>
     </section>
 
@@ -128,7 +130,9 @@
 
         </div>
         <h2>Aménagements extérieurs</h2>
-        <p>JOURDREN T.P. vous accompagne pour l'aménagement complet de vos extérieurs : création de parkings en gravier, tout-venant ou bicouche (différent colorie), réalisation d'allées, accès véhicules, préparation de surfaces, pose de géotextile, réglage et
+        <p>JOURDREN T.P. vous accompagne pour l'aménagement complet de vos extérieurs : création de parkings en gravier,
+          tout-venant ou bicouche (différent colorie), réalisation d'allées, accès véhicules, préparation de surfaces,
+          pose de géotextile, réglage et
           compactage.</p>
         <p>Nous assurons également la mise en forme de surfaces stabilisées pour véhicules, les travaux de nivellement
           et l'amélioration de l'accès à votre propriété. Nous allions robustesse, fonctionnalité et finitions soignées.
@@ -141,8 +145,10 @@
 
     <!-- Service 6 - Abattage et préparation du terrain -->
     <section class="service-block marge ">
-      <div class="service-image">
-        <img src="/img/projet/image3.jpeg" alt="Consultation chantier">
+      <div class="service-image" style="display: flex; flex-direction: row;">
+        <img src="/img/projet/image3.jpeg" alt="Consultation chantier" style="max-height: 750px; flex: 1; width: 50%;">
+        <img src="/img/services/prepa_terrain.jpeg" alt="Consultation chantier" style="max-height: 750px; flex: 1; width: 50%;">
+
       </div>
       <div class="service-content white">
         <div class="service-icon">
@@ -154,7 +160,8 @@
 
         </div>
         <h2>Démolition et préparation du terrain</h2>
-        <p>Avant travaux, nous assurons l'abattage d'arbres, l'ébranchage, la démolition, les desouchages et l'évacuation des végétaux.
+        <p>Avant travaux, nous assurons l'abattage d'arbres, l'ébranchage, la démolition, les desouchages et
+          l'évacuation des végétaux.
         </p>
         <p>Nous intervenons également pour le débroussaillage, la mise à niveau du terrain, la sécurisation des zones et
           la préparation complète des espaces à construire. Cette étape essentielle garantit un terrain propre, dégagé
