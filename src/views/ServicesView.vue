@@ -36,7 +36,8 @@
     <!-- Service 2 - VRD -->
     <section class="service-block ">
       <div class="service-image">
-        <img src="/img/services/2.avif" alt="Résidence">
+        <img src="/img/services/vrd.jpg" alt="Résidence">
+        <img src="/img/services/vrd2.jpg" alt="Résidence">
       </div>
       <div class="service-content white">
         <div class="service-icon">
@@ -91,7 +92,7 @@
     <!-- Service 4 - Eaux pluviales et drainage -->
     <section class="service-block">
       <div class="service-image">
-        <img src="/img/services/4.avif" alt="Bâtiment moderne">
+        <img src="/img/services/piscine.png" alt="Bâtiment moderne">
       </div>
       <div class="service-content white">
         <div class="service-icon">
@@ -106,15 +107,20 @@
 
 
         </div>
-        <h2>Eaux pluviales et drainage</h2>
-        <p>Pour gérer efficacement les eaux pluviales et protéger votre maison, nous installons des drains
-          périphériques, des tranchées drainantes, des zones d'épandage, des caniveaux, des récupérateur d'eau de pluie
-          toutes dimension, des réserves incendies enterrer sous espaces vert ou voirries avec avis technique CCPAT et
-          des
-          réseaux EP complets.</p>
-        <p>Nous réalisons les tranchées, posons les tuyaux, le géotextile, les graviers et nous assurons les
-          raccordements nécessaires. Ces solutions permettent une évacuation maîtrisée de l'eau, évitent l'humidité et
-          contribuent à la stabilité de vos fondations.</p>
+        <h2>Piscine naturelle</h2>
+        <p>JOURDREN T.P. conçoit et réalise des piscines naturelles écologiques, sans produits chimiques, qui
+          s’intègrent harmonieusement à votre jardin et à votre environnement.</p>
+        <p>Nous prenons en charge l’ensemble du projet, de l’étude du terrain jusqu’à la mise en eau du bassin. Les
+          travaux comprennent le terrassement complet, la création des différentes zones (zone de baignade et zone de
+          filtration), la mise en place des couches drainantes, des systèmes de circulation d’eau et des équipements
+          nécessaires au bon fonctionnement de la piscine.</p>
+        <p>Nous réalisons également les raccordements hydrauliques et électriques, le remblaiement, le modelage des
+          berges ainsi que l’intégration paysagère avec des matériaux naturels et des plantations filtrantes adaptées.
+        </p>
+        <p>Chaque piscine est conçue sur mesure afin de garantir une eau claire, un équilibre biologique durable et une
+          parfaite adaptation à la nature de votre sol, à la configuration du terrain et à vos besoins. Notre objectif
+          est de vous offrir un espace de baignade esthétique, écologique et facile d’entretien.
+        </p>
       </div>
     </section>
 
@@ -147,7 +153,8 @@
     <section class="service-block marge ">
       <div class="service-image" style="display: flex; flex-direction: row;">
         <img src="/img/projet/image3.jpeg" alt="Consultation chantier" style="max-height: 750px; flex: 1; width: 50%;">
-        <img src="/img/services/prepa_terrain.jpeg" alt="Consultation chantier" style="max-height: 750px; flex: 1; width: 50%;">
+        <img src="/img/services/prepa_terrain.jpeg" alt="Consultation chantier"
+          style="max-height: 750px; flex: 1; width: 50%;">
 
       </div>
       <div class="service-content white">
