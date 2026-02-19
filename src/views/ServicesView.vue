@@ -35,9 +35,9 @@
 
     <!-- Service 2 - VRD -->
     <section class="service-block ">
-      <div class="service-image">
-        <img src="/img/services/vrd.jpg" alt="Résidence">
-        <img src="/img/services/vrd2.jpg" alt="Résidence">
+      <div class="service-image" style="display: flex; flex-direction: row;">
+        <img src="/img/services/vrd.jpg" alt="Résidence" style="max-height: 750px; flex: 1; width: 50%;">
+        <img src="/img/services/vrd2.jpg" alt="Résidence" style="max-height: 750px; flex: 1; width: 50%;">
       </div>
       <div class="service-content white">
         <div class="service-icon">
