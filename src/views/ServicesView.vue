@@ -35,10 +35,8 @@
 
     <!-- Service 2 - VRD -->
     <section class="service-block ">
-      <div class="service-image image-slider">
-        <transition name="fade" mode="out-in">
-          <img :key="vrdCurrentImage" :src="vrdImages[vrdCurrentImage]" alt="VRD" />
-        </transition>
+      <div class="service-image">
+        <ImageCarousel :images="vrdImages" alt="VRD" />
       </div>
       <div class="service-content white">
         <div class="service-icon">
@@ -83,10 +81,8 @@
         <p>JOURDREN T.P. s'assure que votre installation soit parfaitement dimensionnée, conforme et durable, adaptée à
           la nature de votre sol et aux besoins de votre logement.</p>
       </div>
-      <div class="service-image image-slider">
-        <transition name="fade" mode="out-in">
-          <img :key="assainissementCurrentImage" :src="assainissementImages[assainissementCurrentImage]" alt="Assainissement" />
-        </transition>
+      <div class="service-image">
+        <ImageCarousel :images="assainissementImages" alt="Assainissement" />
       </div>
     </section>
 
@@ -152,10 +148,8 @@
 
     <!-- Service 6 - Abattage et préparation du terrain -->
     <section class="service-block marge ">
-      <div class="service-image image-slider">
-        <transition name="fade" mode="out-in">
-          <img :key="demolitionCurrentImage" :src="demolitionImages[demolitionCurrentImage]" alt="Démolition" />
-        </transition>
+      <div class="service-image">
+        <ImageCarousel :images="demolitionImages" alt="Démolition" />
       </div>
       <div class="service-content white">
         <div class="service-icon">
@@ -179,57 +173,22 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import ImageCarousel from '@/components/ImageCarousel.vue'
 
-const vrdImages = ref([
+const vrdImages = [
   '/img/services/vrd.jpg',
   '/img/services/vrd2.jpg'
-])
-const vrdCurrentImage = ref(0)
+]
 
-const assainissementImages = ref([
+const assainissementImages = [
   '/img/services/Assainissement.jpg',
   '/img/services/assainissement2.jpeg'
-])
-const assainissementCurrentImage = ref(0)
+]
 
-const demolitionImages = ref([
+const demolitionImages = [
   '/img/projet/image3.jpeg',
   '/img/services/prepa_terrain.jpeg'
-])
-const demolitionCurrentImage = ref(0)
-
-let vrdInterval = null
-let assainissementInterval = null
-let demolitionInterval = null
-
-const startSliders = () => {
-  vrdInterval = setInterval(() => {
-    vrdCurrentImage.value = (vrdCurrentImage.value + 1) % vrdImages.value.length
-  }, 4000)
-
-  assainissementInterval = setInterval(() => {
-    assainissementCurrentImage.value = (assainissementCurrentImage.value + 1) % assainissementImages.value.length
-  }, 4000)
-
-  demolitionInterval = setInterval(() => {
-    demolitionCurrentImage.value = (demolitionCurrentImage.value + 1) % demolitionImages.value.length
-  }, 4000)
-}
-
-const stopSliders = () => {
-  if (vrdInterval) clearInterval(vrdInterval)
-  if (assainissementInterval) clearInterval(assainissementInterval)
-  if (demolitionInterval) clearInterval(demolitionInterval)
-}
-
-onMounted(() => {
-  startSliders()
-})
-
-onUnmounted(() => {
-  stopSliders()
-})
+]
 </script>
 
 <style scoped>
@@ -325,41 +284,6 @@ onUnmounted(() => {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.image-slider {
-  position: relative;
-  overflow: hidden;
-  min-height: 100%;
-}
-
-.image-slider img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.image-slider::before {
-  content: '';
-  display: block;
-  padding-top: 66.67%;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.8s ease;
-}
-
-.fade-enter-from {
-  opacity: 0;
-}
-
-.fade-leave-to {
-  opacity: 0;
 }
 
 /* Responsive */
