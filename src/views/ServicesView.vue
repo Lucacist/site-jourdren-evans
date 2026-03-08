@@ -35,9 +35,10 @@
 
     <!-- Service 2 - VRD -->
     <section class="service-block ">
-      <div class="service-image" style="display: flex; flex-direction: row;">
-        <img src="/img/services/vrd.jpg" alt="Résidence" style="max-height: 750px; flex: 1; width: 50%;">
-        <img src="/img/services/vrd2.jpg" alt="Résidence" style="max-height: 750px; flex: 1; width: 50%;">
+      <div class="service-image image-slider">
+        <transition name="fade" mode="out-in">
+          <img :key="vrdCurrentImage" :src="vrdImages[vrdCurrentImage]" alt="VRD" />
+        </transition>
       </div>
       <div class="service-content white">
         <div class="service-icon">
@@ -82,10 +83,10 @@
         <p>JOURDREN T.P. s'assure que votre installation soit parfaitement dimensionnée, conforme et durable, adaptée à
           la nature de votre sol et aux besoins de votre logement.</p>
       </div>
-      <div class="service-image" style="display: flex; flex-direction: row;">
-        <img src="/img/services/Assainissement.jpg" alt="Chantier" style="max-height: 750px; flex: 1; width: 50%;">
-        <img src="/img/services/assainissement2.jpeg" alt="Chantier" style="max-height: 750px; flex: 1; width: 50%;">
-
+      <div class="service-image image-slider">
+        <transition name="fade" mode="out-in">
+          <img :key="assainissementCurrentImage" :src="assainissementImages[assainissementCurrentImage]" alt="Assainissement" />
+        </transition>
       </div>
     </section>
 
@@ -151,11 +152,10 @@
 
     <!-- Service 6 - Abattage et préparation du terrain -->
     <section class="service-block marge ">
-      <div class="service-image" style="display: flex; flex-direction: row;">
-        <img src="/img/projet/image3.jpeg" alt="Consultation chantier" style="max-height: 750px; flex: 1; width: 50%;">
-        <img src="/img/services/prepa_terrain.jpeg" alt="Consultation chantier"
-          style="max-height: 750px; flex: 1; width: 50%;">
-
+      <div class="service-image image-slider">
+        <transition name="fade" mode="out-in">
+          <img :key="demolitionCurrentImage" :src="demolitionImages[demolitionCurrentImage]" alt="Démolition" />
+        </transition>
       </div>
       <div class="service-content white">
         <div class="service-icon">
@@ -179,7 +179,57 @@
 </template>
 
 <script setup>
-// Pas de logique nécessaire pour le moment
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const vrdImages = ref([
+  '/img/services/vrd.jpg',
+  '/img/services/vrd2.jpg'
+])
+const vrdCurrentImage = ref(0)
+
+const assainissementImages = ref([
+  '/img/services/Assainissement.jpg',
+  '/img/services/assainissement2.jpeg'
+])
+const assainissementCurrentImage = ref(0)
+
+const demolitionImages = ref([
+  '/img/projet/image3.jpeg',
+  '/img/services/prepa_terrain.jpeg'
+])
+const demolitionCurrentImage = ref(0)
+
+let vrdInterval = null
+let assainissementInterval = null
+let demolitionInterval = null
+
+const startSliders = () => {
+  vrdInterval = setInterval(() => {
+    vrdCurrentImage.value = (vrdCurrentImage.value + 1) % vrdImages.value.length
+  }, 4000)
+
+  assainissementInterval = setInterval(() => {
+    assainissementCurrentImage.value = (assainissementCurrentImage.value + 1) % assainissementImages.value.length
+  }, 4000)
+
+  demolitionInterval = setInterval(() => {
+    demolitionCurrentImage.value = (demolitionCurrentImage.value + 1) % demolitionImages.value.length
+  }, 4000)
+}
+
+const stopSliders = () => {
+  if (vrdInterval) clearInterval(vrdInterval)
+  if (assainissementInterval) clearInterval(assainissementInterval)
+  if (demolitionInterval) clearInterval(demolitionInterval)
+}
+
+onMounted(() => {
+  startSliders()
+})
+
+onUnmounted(() => {
+  stopSliders()
+})
 </script>
 
 <style scoped>
@@ -277,6 +327,41 @@
   display: block;
 }
 
+.image-slider {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.image-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-slider::before {
+  content: '';
+  display: block;
+  padding-top: 66.67%;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.8s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
+}
+
+.fade-leave-to {
+  opacity: 0;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .service-block {
@@ -311,6 +396,10 @@
 
   .service-image {
     min-height: 300px;
+  }
+
+  .image-slider img {
+    max-height: 400px;
   }
 }
 </style>
