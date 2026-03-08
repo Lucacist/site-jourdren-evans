@@ -17,10 +17,10 @@
 
             <div class="info-col">
                 <h3 class="col-title">Contact</h3>
-                <p>02.32.92.24.29</p>
-                <p>06.18.04.30.08</p>
+                <p>02 32 92 24 29</p>
+                <p>06 18 04 30 08</p>
                 <br>
-                <p>site-jourdren-evans.vercel.app/a-propos</p>
+                <p><a href="https://www.jourdren-tp.com/a-propos" style="color: black; text-decoration: none;">https://www.jourdren-tp.com/a-propos</a></p>
                 
                 <div class="social-icons">
                     <a class="pi pi-facebook" style="font-size: 1.2rem; color: black; text-decoration: none;" href="https://www.facebook.com/profile.php?id=100077686390667"></a>

@@ -54,9 +54,8 @@ const currentYear = new Date().getFullYear();
 
     <div class="footer-bottom">
       <div class="legal-links">
-        <a href="#">Politique de cookies</a>
-        <a href="#">Politique de confidentialité</a>
-        <a href="#">Mentions légales</a>
+        <router-link to="/politique-confidentialite">Politique de confidentialité</router-link>
+        <router-link to="/mentions-legales">Mentions légales</router-link>
       </div>
 
       <div class="back-to-top">

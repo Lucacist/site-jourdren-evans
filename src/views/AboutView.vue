@@ -11,7 +11,7 @@
 
     <!-- Main Image -->
     <section class="hero-image">
-      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200" alt="Équipe JOURDREN T.P.">
+      <img src="/propos.PNG" alt="Équipe JOURDREN T.P.">
     </section>
 
     <!-- Content Section -->
@@ -109,7 +109,9 @@
 }
 
 .hero-image img {
-  width: 100%;
+  width: fit-content;
+  max-width: 90%;
+  margin: 0 auto;
   height: auto;
   display: block;
   max-height: 500px;
