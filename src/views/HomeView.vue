@@ -13,8 +13,15 @@ const router = useRouter();
       <div class="hero-overlay"></div>
       
       <div class="hero-content">
-        <p class="hero-tagline">Entreprise familiale depuis 1973</p>
-        <h1 class="hero-title">Votre terrain, notre expertise</h1>
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Entreprise familiale depuis 1973
+        </div>
+        
+        <h1 class="hero-title">
+          Votre terrain,<br>notre expertise
+        </h1>
+        
         <p class="hero-subtitle">
           Terrassement, VRD et aménagements extérieurs en Normandie.
         </p>
@@ -22,6 +29,9 @@ const router = useRouter();
         <div class="hero-actions">
           <button class="btn-primary" @click="router.push('/projets')">
             Voir nos réalisations
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
           </button>
           <button class="btn-outline" @click="router.push('/contact')">
             Demander un devis
@@ -92,64 +102,86 @@ const router = useRouter();
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7));
   z-index: -1;
 }
 
 .hero-content {
   text-align: center;
   padding: 2rem;
-  max-width: 720px;
+  max-width: 800px;
 }
 
-.hero-tagline {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  margin-bottom: 1.25rem;
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-white);
+  margin-bottom: 2rem;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary);
+  border-radius: 50%;
 }
 
 .hero-title {
-  font-size: 3.25rem;
+  font-size: 4rem;
   font-weight: 700;
   color: var(--color-white);
-  line-height: 1.15;
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
 }
 
 .hero-subtitle {
-  font-size: 1.0625rem;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-actions {
   display: flex;
-  gap: 0.75rem;
+  gap: 1rem;
   justify-content: center;
 }
 
 .btn-primary {
-  padding: 0.75rem 1.5rem;
-  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.75rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--neutral-900);
   background: var(--color-primary);
   border: none;
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: background var(--transition);
+  transition: all var(--transition);
 }
 
 .btn-primary:hover {
   background: var(--color-primary-light);
+  transform: translateY(-2px);
 }
 
 .btn-outline {
-  padding: 0.75rem 1.5rem;
-  font-size: 0.875rem;
+  padding: 1rem 1.75rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--color-white);
   background: transparent;
@@ -160,7 +192,7 @@ const router = useRouter();
 }
 
 .btn-outline:hover {
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: var(--color-white);
   background: rgba(255, 255, 255, 0.1);
 }
 
@@ -247,11 +279,11 @@ const router = useRouter();
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
   }
 
   .hero-subtitle {
-    font-size: 0.9375rem;
+    font-size: 1rem;
   }
 
   .hero-actions {

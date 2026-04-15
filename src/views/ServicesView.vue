@@ -34,7 +34,7 @@
     </section>
 
     <!-- Service 2 - VRD -->
-    <section class="service-block ">
+    <section class="service-block reverse">
       <div class="service-image">
         <ImageCarousel :images="vrdImages" alt="VRD" />
       </div>
@@ -87,7 +87,7 @@
     </section>
 
     <!-- Service 4 - Eaux pluviales et drainage -->
-    <section class="service-block">
+    <section class="service-block reverse">
       <div class="service-image">
         <img src="/img/services/piscine.png" alt="Bâtiment moderne">
       </div>
@@ -147,7 +147,7 @@
     </section>
 
     <!-- Service 6 - Abattage et préparation du terrain -->
-    <section class="service-block marge ">
+    <section class="service-block marge reverse ">
       <div class="service-image">
         <ImageCarousel :images="demolitionImages" alt="Démolition" />
       </div>
@@ -195,6 +195,10 @@ const demolitionImages = [
 .services-page {
   min-height: 100vh;
   background: var(--color-white);
+}
+
+.reverse {
+  flex-direction: row-reverse;
 }
 
 /* Hero Section */

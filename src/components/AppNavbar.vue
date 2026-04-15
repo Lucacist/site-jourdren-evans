@@ -95,80 +95,80 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 1rem 0;
+  padding: 1rem 1.5rem;
   transition: all var(--transition);
 }
 
-.navbar.scrolled {
-  background: var(--color-white);
-  border-bottom: 1px solid var(--border-color);
-  padding: 0.75rem 0;
-}
-
 .navbar-inner {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: var(--color-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  box-shadow: var(--shadow);
 }
 
 .brand {
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .brand img {
-  height: 40px;
+  height: 36px;
 }
 
 .desktop-menu {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 0.25rem;
 }
 
 .menu-item {
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--color-white);
-  text-decoration: none;
-  transition: color var(--transition);
-}
-
-.navbar.scrolled .menu-item {
   color: var(--neutral-600);
+  text-decoration: none;
+  padding: 0.5rem 0.875rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
 }
 
 .menu-item:hover {
-  color: var(--color-primary);
+  color: var(--neutral-900);
 }
 
 .menu-item.active {
-  color: var(--color-primary);
+  color: var(--neutral-900);
+  font-weight: 600;
 }
 
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .btn-contact {
   display: inline-flex;
   align-items: center;
-  padding: 0.5rem 1rem;
+  gap: 0.375rem;
+  padding: 0.625rem 1.25rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--neutral-900);
-  background: var(--color-primary);
-  border-radius: var(--radius-md);
+  color: var(--color-white);
+  background: var(--neutral-900);
+  border-radius: var(--radius-full);
   text-decoration: none;
-  transition: background var(--transition);
+  transition: all var(--transition);
 }
 
 .btn-contact:hover {
-  background: var(--color-primary-light);
+  background: var(--neutral-800);
 }
 
 .burger-btn {
@@ -190,13 +190,9 @@ onUnmounted(() => {
   display: block;
   width: 18px;
   height: 2px;
-  background: var(--color-white);
+  background: var(--neutral-700);
   border-radius: 1px;
   transition: all var(--transition);
-}
-
-.navbar.scrolled .burger-btn span {
-  background: var(--neutral-900);
 }
 
 .burger-btn.active span:nth-child(1) {
@@ -216,7 +212,7 @@ onUnmounted(() => {
   inset: 0;
   background: var(--color-white);
   z-index: 999;
-  padding-top: 80px;
+  padding-top: 100px;
 }
 
 .mobile-menu-inner {
@@ -246,21 +242,21 @@ onUnmounted(() => {
 }
 
 .mobile-menu-item.router-link-active {
-  background: var(--color-primary-subtle);
-  color: var(--color-primary-dark);
+  background: var(--neutral-100);
+  color: var(--neutral-900);
 }
 
 .mobile-contact {
   margin-top: 1rem;
-  background: var(--color-primary);
-  color: var(--neutral-900);
+  background: var(--neutral-900);
+  color: var(--color-white);
   font-weight: 500;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   padding: 0.875rem 2rem;
 }
 
 .mobile-contact:hover {
-  background: var(--color-primary-light);
+  background: var(--neutral-800);
 }
 
 .mobile-menu-enter-active,
@@ -281,6 +277,14 @@ onUnmounted(() => {
 }
 
 @media (max-width: 799px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .navbar-inner {
+    padding: 0.375rem 0.375rem 0.375rem 0.75rem;
+  }
+
   .desktop-menu,
   .btn-contact {
     display: none;
