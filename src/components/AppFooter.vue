@@ -117,8 +117,8 @@ const footerLinks = {
 
 <style scoped>
 .app-footer {
-  background: var(--neutral-900);
-  color: var(--color-white);
+  background: var(--color-primary-light);
+  color: var(--neutral-950);
   padding-top: 4rem;
 }
 
@@ -133,7 +133,7 @@ const footerLinks = {
   grid-template-columns: 1.25fr 2fr;
   gap: 4rem;
   padding-bottom: 3rem;
-  border-bottom: 1px solid var(--neutral-800);
+  border-bottom: 1px solid var(--neutral-950);
 }
 
 .footer-brand {
@@ -152,7 +152,7 @@ const footerLinks = {
 
 .brand-tagline {
   font-size: 0.875rem;
-  color: var(--neutral-400);
+  color: var(--neutral-950);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -168,9 +168,9 @@ const footerLinks = {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--neutral-800);
+  background: var(--neutral-950);
   border-radius: var(--radius-md);
-  color: var(--neutral-400);
+  color: var(--neutral-100);
   transition: all var(--transition);
 }
 
@@ -188,7 +188,7 @@ const footerLinks = {
 .footer-col h4 {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--neutral-950);
   margin-bottom: 1rem;
 }
 
@@ -204,19 +204,19 @@ const footerLinks = {
 
 .footer-col a {
   font-size: 0.875rem;
-  color: var(--neutral-400);
+  color: var(--neutral-900);
   transition: color var(--transition);
 }
 
 .footer-col a:hover {
-  color: var(--color-primary);
+  color: var(--neutral-950);
 }
 
 .contact-info li {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  color: var(--neutral-400);
+  color: var(--neutral-950);
   font-size: 0.875rem;
 }
 
@@ -240,7 +240,7 @@ const footerLinks = {
 
 .copyright {
   font-size: 0.8125rem;
-  color: var(--neutral-500);
+  color: var(--neutral-950);
 }
 
 .legal-links {
@@ -250,13 +250,11 @@ const footerLinks = {
 
 .legal-links a {
   font-size: 0.8125rem;
-  color: var(--neutral-500);
+  color: var(--neutral-950);
   transition: color var(--transition);
 }
 
-.legal-links a:hover {
-  color: var(--color-primary);
-}
+
 
 .back-to-top {
   width: 36px;

@@ -84,7 +84,7 @@
 .hero-section {
   text-align: center;
   padding: 8rem 1.5rem 4rem;
-  background: var(--neutral-900);
+  background: var(--color-primary-light);
 }
 
 .hero-content {
@@ -102,7 +102,7 @@
 
 .hero-label {
   font-size: 1rem;
-  color: var(--neutral-400);
+  color: var(--neutral-100);
 }
 
 /* Hero Image */

@@ -105,9 +105,10 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--color-white);
+  background: #ffffffbb;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-full);
+  backdrop-filter: blur(10px);
   padding: 0.5rem 0.5rem 0.5rem 1rem;
   box-shadow: var(--shadow);
 }
