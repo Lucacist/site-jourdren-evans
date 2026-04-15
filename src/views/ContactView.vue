@@ -149,56 +149,50 @@ ${form.value.message || 'Aucun message'}
 <style scoped>
 .contact-page {
   min-height: 100vh;
+  padding-top: 4rem;
+  background: var(--color-white);
 }
 
 .contact-container {
-  text-align: center;
-  padding: 5rem 1rem 1rem 1rem;
-  background:#fff;
-  margin-bottom: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  color: #000;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Form Section */
 .form-section {
-  padding: 60px 50px;
-  background: white;
-}
-
-.page-label {
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  color: #333;
+  padding: 4rem 3rem;
+  background: var(--color-white);
+  text-align: left;
 }
 
 .form-section h1 {
-  font-weight: 800;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-size: 2rem;
+  color: var(--neutral-900);
+  letter-spacing: -0.025em;
 }
 
 .description {
-  font-size: 0.95rem;
+  font-size: 0.9375rem;
   line-height: 1.7;
-  margin-bottom: 40px;
-  color: #333;
+  margin-bottom: 2.5rem;
+  color: var(--neutral-600);
 }
 
 /* Form Styles */
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .form-group {
@@ -211,26 +205,28 @@ ${form.value.message || 'Aucun message'}
 }
 
 .form-group label {
-  font-size: 0.9rem;
-  margin-bottom: 8px;
-  color: #333;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--neutral-700);
 }
 
 .form-group input,
 .form-group textarea {
-  padding: 12px;
-  border: 1px solid #ddd;
-  font-size: 0.95rem;
-  font-family: 'Manrope', sans-serif;
-  background: white;
-  color: #333;
-  transition: border-color 0.3s;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.9375rem;
+  font-family: var(--font-family);
+  background: var(--color-white);
+  color: var(--neutral-900);
+  transition: border-color var(--transition);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #ff5722;
+  border-color: var(--color-primary);
 }
 
 .form-group textarea {
@@ -238,24 +234,25 @@ ${form.value.message || 'Aucun message'}
 }
 
 .submit-btn {
-  background: #ff5722;
-  color: white;
+  background: var(--color-primary);
+  color: var(--neutral-900);
   border: none;
-  padding: 15px 40px;
-  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
   font-weight: 500;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background var(--transition);
   align-self: flex-start;
-  margin-top: 10px;
+  margin-top: 0.5rem;
 }
 
 .submit-btn:hover {
-  background: #e64a19;
+  background: var(--color-primary-light);
 }
 
 .submit-btn:disabled {
-  background: #ccc;
+  background: var(--neutral-300);
   cursor: not-allowed;
 }
 
@@ -263,12 +260,13 @@ ${form.value.message || 'Aucun message'}
 .image-section {
   position: relative;
   overflow: hidden;
+  background: var(--neutral-100);
 }
 
 .image-section img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
 }
 
@@ -279,38 +277,37 @@ ${form.value.message || 'Aucun message'}
   }
 
   .image-section {
-    min-height: 400px;
+    min-height: 360px;
+    order: -1;
   }
 
   .form-section {
-    padding: 40px 30px;
+    padding: 2.5rem 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
- 
-
   .form-section {
-    padding: 30px 20px;
+    padding: 2rem 1.5rem;
   }
 
   .form-section h1 {
-    font-size: 1.8rem;
+    font-size: 1.625rem;
   }
 
   .form-row {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 1rem;
   }
 
   .image-section {
-    min-height: 300px;
+    min-height: 280px;
   }
 }
 
 @media (max-width: 480px) {
   .form-section h1 {
-    font-size: 1.5rem;
+    font-size: 1.375rem;
   }
 
   .submit-btn {
