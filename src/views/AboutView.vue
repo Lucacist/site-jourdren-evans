@@ -77,127 +77,132 @@
 <style scoped>
 .about-page {
   min-height: 100vh;
+  background: var(--color-white);
 }
 
 /* Hero Section */
 .hero-section {
   text-align: center;
-  padding: 5rem 1rem 1rem 1rem;
-  background: #fbc02b;
-  margin-bottom: 2rem;
-  color: #000;
+  padding: 8rem 1.5rem 4rem;
+  background: var(--neutral-900);
 }
 
 .hero-content {
-  max-width: 1400px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding-left: 40px;
 }
 
 .hero-section h1 {
-  font-weight: 800;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-size: 2.25rem;
+  color: var(--color-white);
+  letter-spacing: -0.025em;
+}
+
+.hero-label {
+  font-size: 1rem;
+  color: var(--neutral-400);
 }
 
 /* Hero Image */
 .hero-image {
-  max-width: 1400px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 3rem 1.5rem;
 }
 
 .hero-image img {
-  width: fit-content;
-  max-width: 90%;
+  width: auto;
+  max-width: 100%;
+  max-height: 400px;
   margin: 0 auto;
   height: auto;
   display: block;
-  max-height: 500px;
-  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
 }
 
 /* Content Section */
 .content-section {
-  background: white;
-  padding: 60px 20px 80px;
+  background: var(--color-white);
+  padding: 3rem 1.5rem 5rem;
 }
 
 .content-container {
-  max-width: 1400px;
+  max-width: 1100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 4rem;
 }
 
 /* Left Column */
 .left-column {
-  padding-right: 20px;
+  padding-right: 1rem;
 }
 
 .left-column h2 {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
+  font-size: 1.375rem;
+  margin-bottom: 0.5rem;
   font-weight: 600;
-  color: #333;
+  color: var(--neutral-900);
+  letter-spacing: -0.025em;
 }
 
 .subtitle {
-  font-size: 0.9rem;
-  margin-bottom: 25px;
-  color: #666;
-  font-style: italic;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  color: var(--neutral-500);
 }
 
 .left-column p {
-  font-size: 0.95rem;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  color: #333;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: var(--neutral-600);
 }
 
 .engagement {
+  color: var(--neutral-500);
+  margin-top: 1.5rem;
   font-style: italic;
-  color: #666;
-  margin-top: 30px;
 }
 
 /* Right Column */
 .right-column {
-  padding-left: 20px;
+  padding-left: 1rem;
 }
 
 .value-block {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .divider {
-  width: 60px;
-  height: 3px;
-  background: #333;
-  margin-bottom: 20px;
+  width: 40px;
+  height: 2px;
+  background: var(--color-primary);
+  margin-bottom: 1rem;
 }
 
 .value-block h3 {
-  font-size: 1.25rem;
-  margin-bottom: 15px;
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
   font-weight: 600;
-  color: #333;
+  color: var(--neutral-900);
 }
 
 .value-block p {
-  font-size: 0.95rem;
-  line-height: 1.8;
-  color: #333;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--neutral-600);
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
   .content-container {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 3rem;
   }
 
   .left-column,
@@ -207,20 +212,24 @@
 }
 
 @media (max-width: 768px) {
-  .hero-content {
-    padding-left: 20px;
+  .hero-section {
+    padding: 6rem 1.5rem 2.5rem;
   }
 
   .hero-section h1 {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
+  }
+
+  .hero-image {
+    padding: 2rem 1.5rem;
   }
 
   .content-section {
-    padding: 40px 20px 60px;
+    padding: 2rem 1.5rem 3rem;
   }
 
   .content-container {
-    gap: 40px;
+    gap: 2.5rem;
   }
 }
 </style>

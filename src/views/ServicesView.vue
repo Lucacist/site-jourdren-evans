@@ -194,88 +194,98 @@ const demolitionImages = [
 <style scoped>
 .services-page {
   min-height: 100vh;
+  background: var(--color-white);
 }
 
 /* Hero Section */
 .hero-section {
   text-align: center;
-  padding: 5rem 1rem 1rem 1rem;
-  background: #fbc02b;
-  margin-bottom: 2rem;
-  color: #000;
+  padding: 8rem 1.5rem 4rem;
+  background: var(--neutral-900);
 }
 
 .hero-content {
-  max-width: 1400px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding-left: 40px;
 }
 
 .hero-section h1 {
-  font-weight: 800;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-size: 2.25rem;
+  color: var(--color-white);
+  letter-spacing: -0.025em;
 }
 
 .hero-subtitle {
-  font-size: 0.95rem;
+  font-size: 1rem;
+  color: var(--neutral-400);
 }
 
 /* Service Blocks */
 .service-block {
   display: flex;
-  min-height: 500px;
-  max-width: 1400px;
-  margin: 0 auto 0;
+  min-height: 480px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--border-color);
 }
 
-
+.service-block.reverse {
+  flex-direction: row-reverse;
+}
 
 .service-content {
-  flex: 0 0 40%;
-  padding: 60px 50px;
+  flex: 0 0 45%;
+  padding: 3.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .service-content.yellow {
-  background: #f9a825;
+  background: var(--color-primary-subtle);
 }
 
 .service-content.white {
-  background: white;
+  background: var(--color-white);
 }
 
 .service-icon {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 25px;
-  color: #333;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary-dark);
+}
+
+.service-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .service-content h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-size: 1.375rem;
+  margin-bottom: 1rem;
   font-weight: 600;
-  color: #333;
+  color: var(--neutral-900);
   line-height: 1.3;
+  letter-spacing: -0.025em;
 }
 
 .service-content p {
-  font-size: 0.95rem;
+  font-size: 0.9375rem;
   line-height: 1.7;
-  margin-bottom: 15px;
-  color: #333;
+  margin-bottom: 0.875rem;
+  color: var(--neutral-600);
 }
 
 .marge {
-  margin-bottom: 2rem;
+  margin-bottom: 0;
+  border-bottom: none;
 }
 
 .service-image {
-  flex: 0 0 60%;
+  flex: 0 0 55%;
   overflow: hidden;
 }
 
@@ -288,42 +298,41 @@ const demolitionImages = [
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .service-block {
-    flex-direction: column !important;
-  }
-
-  .reverse {
-    flex-direction: column-reverse !important;
+  .service-block,
+  .service-block.reverse {
+    flex-direction: column;
   }
 
   .service-content {
     flex: 1;
-    padding: 40px 30px;
+    padding: 2.5rem 1.5rem;
   }
 
   .service-image {
     flex: 1;
-    min-height: 400px;
+    min-height: 360px;
   }
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    padding: 6rem 1.5rem 2.5rem;
+  }
 
-
-  .hero-content {
-    padding-left: 20px;
+  .hero-section h1 {
+    font-size: 1.75rem;
   }
 
   .service-content {
-    padding: 30px 20px;
+    padding: 2rem 1.5rem;
+  }
+
+  .service-content h2 {
+    font-size: 1.25rem;
   }
 
   .service-image {
-    min-height: 300px;
-  }
-
-  .image-slider img {
-    max-height: 400px;
+    min-height: 280px;
   }
 }
 </style>

@@ -7,33 +7,61 @@ const router = useRouter();
 
 <template>
   <div class="home-container">
-    <img src="/img/home/home-img.png" alt="Chantier de terrassement Jourdren Evans" class="hero-background-image" />
-
-    <div class="hero-content">
-      <h1>Votre terrain, Notre expertise</h1>
-      <p>Entreprise familiale depuis 1973</p>
-
-      <div class="hero-buttons">
-        <Button label="Voir les Projets" class="btn-primary" @click="router.push('/projets')" />
-
-        <Button label="Nous contacter" class="btn-secondary" outlined @click="router.push('/contact')" />
-      </div>
-    </div>
-    <div class="content-flow">
-      <ServicesSection />
-    </div>
-    <div class="content-flow">
-      <div class="flexx">
-        <h2 class="content-title">Apprendre a nous connaitre</h2>
-        <p>
-          Entreprise spécialisée dans le terrassement, les aménagements extérieurs et les
-          travaux de réseaux, JOURDREN T.P. met son savoir-faire et sa rigueur au service
-          de vos projets pour garantir des chantiers solides, propres et durables.
+    <!-- Hero Section -->
+    <section class="hero">
+      <img src="/img/home/home-img.png" alt="Chantier de terrassement Jourdren Evans" class="hero-bg" />
+      <div class="hero-overlay"></div>
+      
+      <div class="hero-content">
+        <p class="hero-tagline">Entreprise familiale depuis 1973</p>
+        <h1 class="hero-title">Votre terrain, notre expertise</h1>
+        <p class="hero-subtitle">
+          Terrassement, VRD et aménagements extérieurs en Normandie.
         </p>
-        <RouterLink to="/a-propos" class="btn-dark">Lire plus</RouterLink>
+
+        <div class="hero-actions">
+          <button class="btn-primary" @click="router.push('/projets')">
+            Voir nos réalisations
+          </button>
+          <button class="btn-outline" @click="router.push('/contact')">
+            Demander un devis
+          </button>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Services Section -->
+    <ServicesSection />
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="about-container">
+        <div class="about-content">
+          <p class="section-label">À propos</p>
+          <h2 class="section-title">Une entreprise familiale à votre service</h2>
+          <p class="section-text">
+            Entreprise spécialisée dans le terrassement, les aménagements extérieurs et les
+            travaux de réseaux, JOURDREN T.P. met son savoir-faire et sa rigueur au service
+            de vos projets pour garantir des chantiers solides, propres et durables.
+          </p>
+          <p class="section-text">
+            Depuis 1973, nous accompagnons les particuliers et les professionnels dans tous 
+            leurs projets de terrassement en Normandie.
+          </p>
+          <RouterLink to="/a-propos" class="link-arrow">
+            En savoir plus →
+          </RouterLink>
+        </div>
+        <div class="about-image">
+          <img src="/img/home/home-img.png" alt="Équipe Jourdren TP" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
     <TestimonialsSection />
+    
+    <!-- Contact -->
     <ContactSection />
   </div>
 </template>
@@ -41,149 +69,202 @@ const router = useRouter();
 <style scoped>
 .home-container {
   width: 100%;
-  height: auto;
-  position: relative;
-  overflow: hidden;
 }
 
-.hero-background-image {
-  position: fixed;
-  top: 0;
-  left: 0;
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.5);
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
   z-index: -1;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  color: white;
+  padding: 2rem;
+  max-width: 720px;
 }
 
-.hero-content h1 {
-  font-size: 4rem;
-  font-weight: 900;
-  font-family: Anton;
-  margin-bottom: 0rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+.hero-tagline {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
 }
 
-.hero-content p {
-  font-size: 1.3rem;
-  margin-bottom: 2.5rem;
-  font-family: Anton;
-  color: #f0f0f0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+.hero-title {
+  font-size: 3.25rem;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.025em;
 }
 
-.hero-buttons {
+.hero-subtitle {
+  font-size: 1.0625rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
   display: flex;
-  gap: 1.5rem;
+  gap: 0.75rem;
+  justify-content: center;
 }
 
 .btn-primary {
-  background-color: #fbc02b !important;
-  border: none !important;
-  color: #222 !important;
-  font-weight: bold;
-  padding: 0.8rem 2rem;
-  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--neutral-900);
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--transition);
 }
 
 .btn-primary:hover {
-  background-color: #fbc02b !important;
+  background: var(--color-primary-light);
 }
 
-.btn-secondary {
-  color: white !important;
-  border: 2px solid white !important;
-  font-weight: bold;
-  padding: 0.8rem 2rem;
-  font-size: 1.1rem;
+.btn-outline {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-white);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition);
 }
 
-.btn-secondary:hover {
-  background-color: white !important;
-  color: #333 !important;
+.btn-outline:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
 }
 
-.content-flow {
-  position: relative;
-  z-index: 2;
-  /* Important : Doit être au-dessus de l'image fixe (z-index: -1 ou 0) */
-  background-color: white;
-  /* Ou transparent selon le design */
-  color: #000;
+/* ABOUT */
+.about-section {
+  padding: 6rem 0;
+  background: var(--neutral-50);
 }
 
-.content-title {
-  font-size: 3rem;
-  margin-top: 0;
-  font-weight: 800;
-  margin-bottom: 4rem;
-}
-
-.content-flow p {
-  font-size: 1.4rem;
-  line-height: 1.6;
-  color: #333;
-  /* Gris très foncé pour le texte courant */
-}
-
-.flexx {
-  padding: 3rem 2rem;
-  max-width: 1200px;
+.about-container {
+  max-width: 1100px;
   margin: 0 auto;
-  text-align: center;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
 
-:deep(.btn-dark) {
-  background-color: #2c2c2c !important;
-  border: none !important;
-  color: white !important;
-  padding: 0.8rem 2.5rem;
-  font-weight: bold;
-  font-size: 1rem;
-  border-radius: 4px;
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--neutral-900);
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.025em;
+}
+
+.section-text {
+  font-size: 0.9375rem;
+  color: var(--neutral-600);
+  line-height: 1.7;
+  margin-bottom: 0.875rem;
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--neutral-900);
   text-decoration: none;
-  /* Coins légèrement carrés comme sur l'image */
+  transition: color var(--transition);
 }
 
-:deep(.btn-dark:hover) {
-  background-color: black !important;
+.link-arrow:hover {
+  color: var(--color-primary-dark);
+}
+
+.about-image {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-image {
+    order: -1;
+    max-height: 360px;
+  }
 }
 
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.5rem;
-    margin: 0 1rem;
+  .hero-title {
+    font-size: 2.25rem;
   }
 
-  .hero-content p {
-    font-size: 1.1rem;
+  .hero-subtitle {
+    font-size: 0.9375rem;
   }
 
-  .hero-buttons {
+  .hero-actions {
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
   }
 
-  .content-title {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+  .about-section {
+    padding: 4rem 0;
   }
 
-  .content-flow p {
-    font-size: 1.2rem;
+  .section-title {
+    font-size: 1.625rem;
   }
 }
 </style>

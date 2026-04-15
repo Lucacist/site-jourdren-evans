@@ -3,7 +3,6 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-// Fonction pour remonter en haut de page en douceur
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
@@ -12,208 +11,321 @@ const scrollToTop = () => {
 };
 
 const currentYear = new Date().getFullYear();
+
+const footerLinks = {
+  services: [
+    { label: 'Terrassement', path: '/services' },
+    { label: 'VRD', path: '/services' },
+    { label: 'Aménagements', path: '/services' },
+  ],
+  company: [
+    { label: 'À propos', path: '/a-propos' },
+    { label: 'Projets', path: '/projets' },
+    { label: 'Contact', path: '/contact' },
+  ],
+  legal: [
+    { label: 'Mentions légales', path: '/mentions-legales' },
+    { label: 'Confidentialité', path: '/politique-confidentialite' },
+  ]
+};
 </script>
 
 <template>
   <footer class="app-footer">
-    <div class="footer-divider"></div>
-
     <div class="footer-container">
-      <div class="footer-col brand-col">
-        <h2 class="footer-brand">Jourdren Evans</h2>
-        <span class="footer-subtitle">Terrassement</span>
-      </div>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo" @click="router.push('/')">
+            <img class="footer-logo" src="/public/icone.svg" alt="Jourdren TP">
+          </div>
+          <p class="brand-tagline">
+            Entreprise familiale spécialisée dans le terrassement et les travaux publics depuis 1973.
+          </p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=100077686390667" target="_blank" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" target="_blank" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
 
-      <div class="footer-col">
-        <h3 class="col-title">Siège social</h3>
-        <p>Route du Manoir,</p>
-        <p>27460 Alizay</p>
-        <br />
-        <p>02.32.92.24.29</p>
-        <p>site-jourdren-evans.vercel.app/a-propos</p>
-      </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4 class="col-title">Services</h4>
+            <ul>
+              <li v-for="link in footerLinks.services" :key="link.label">
+                <router-link :to="link.path">{{ link.label }}</router-link>
+              </li>
+            </ul>
+          </div>
 
-      <div class="footer-col">
-        <h3 class="col-title">Réseaux sociaux</h3>
-        <div class="social-links">
-          <a href="https://www.facebook.com/profile.php?id=100077686390667">Facebook</a>
-          <a href="#">Instagram</a>
+          <div class="footer-col">
+            <h4 class="col-title">Entreprise</h4>
+            <ul>
+              <li v-for="link in footerLinks.company" :key="link.label">
+                <router-link :to="link.path">{{ link.label }}</router-link>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="col-title">Contact</h4>
+            <ul class="contact-info">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>Route du Manoir, 27460 Alizay</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span>06 18 04 30 08</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="footer-col">
-        <h3 class="col-title">Questions</h3>
-        <p class="question-text">
-          Pour vos questions, veuillez appeler le : 06.18.04.30.08
-        </p>
-        <Button class="btn-secondary" @click="router.push('/contact')">
-          Nous contacter
-        </Button>
-      </div>
-    </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <p class="copyright">© {{ currentYear }} Jourdren TP. Tous droits réservés.</p>
+          <div class="legal-links">
+            <router-link v-for="link in footerLinks.legal" :key="link.label" :to="link.path">
+              {{ link.label }}
+            </router-link>
+          </div>
+        </div>
 
-    <div class="footer-bottom">
-      <div class="legal-links">
-        <router-link to="/politique-confidentialite">Politique de confidentialité</router-link>
-        <router-link to="/mentions-legales">Mentions légales</router-link>
-      </div>
-
-      <div class="back-to-top">
-        <a href="#" @click.prevent="scrollToTop"
-          ><svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M17.7102 9.88001L13.4102 5.59001C13.0355 5.21751 12.5286 5.00842 12.0002 5.00842C11.4718 5.00842 10.9649 5.21751 10.5902 5.59001L6.29018 9.88001C6.10393 10.0674 5.99939 10.3208 5.99939 10.585C5.99939 10.8492 6.10393 11.1026 6.29018 11.29C6.38315 11.3837 6.49375 11.4581 6.61561 11.5089C6.73746 11.5597 6.86817 11.5858 7.00018 11.5858C7.13219 11.5858 7.2629 11.5597 7.38476 11.5089C7.50662 11.4581 7.61722 11.3837 7.71018 11.29L11.0002 8.00001V19C11.0002 19.2652 11.1055 19.5196 11.2931 19.7071C11.4806 19.8947 11.735 20 12.0002 20C12.2654 20 12.5198 19.8947 12.7073 19.7071C12.8948 19.5196 13.0002 19.2652 13.0002 19V8.00001L16.2902 11.29C16.4772 11.4783 16.7313 11.5846 16.9966 11.5856C17.262 11.5865 17.5169 11.482 17.7052 11.295C17.8935 11.108 17.9998 10.8539 18.0007 10.5885C18.0017 10.3232 17.8972 10.0683 17.7102 9.88001Z"
-              fill="#000"
-            />
+        <button class="back-to-top" @click="scrollToTop" aria-label="Retour en haut">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
           </svg>
-        </a>
+        </button>
       </div>
-    </div>
-
-    <div class="copyright">
-      <p>© {{ currentYear }} par Jourdren Evans</p>
     </div>
   </footer>
 </template>
 
 <style scoped>
 .app-footer {
-  background-color: #fbc02b; /* Jaune Moutarde */
-  color: #1a1a1a;
-  padding: 3rem 2rem 2rem 2rem;
-  font-family: sans-serif;
+  background: var(--neutral-900);
+  color: var(--color-white);
+  padding-top: 4rem;
 }
 
-.footer-divider {
-  border-top: 1px solid black;
-  margin-bottom: 3rem;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* GRILLE PRINCIPALE */
 .footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.footer-top {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto 4rem auto;
+  grid-template-columns: 1.25fr 2fr;
+  gap: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--neutral-800);
 }
 
-/* TYPOGRAPHIE COLONNES */
 .footer-brand {
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin: 0;
-  text-transform: uppercase;
+  max-width: 280px;
 }
 
-.footer-subtitle {
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+.brand-logo {
+  cursor: pointer;
+  margin-bottom: 1rem;
 }
 
-.col-title {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
+.brand-logo img {
+  height: 48px;
+  width: auto;
 }
 
-.footer-col p,
-.footer-col a {
-  font-size: 0.95rem;
+.brand-tagline {
+  font-size: 0.875rem;
+  color: var(--neutral-400);
   line-height: 1.6;
-  color: #1a1a1a;
-  text-decoration: none;
-  margin: 0.2rem 0;
+  margin-bottom: 1.5rem;
 }
 
 .social-links {
   display: flex;
-  flex-direction: column;
   gap: 0.5rem;
 }
 
-.question-text {
-  margin-bottom: 1.5rem !important;
+.social-links a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--neutral-800);
+  border-radius: var(--radius-md);
+  color: var(--neutral-400);
+  transition: all var(--transition);
 }
 
-/* PARTIE BASSE */
+.social-links a:hover {
+  background: var(--color-primary);
+  color: var(--neutral-900);
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer-col h4 {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col a {
+  font-size: 0.875rem;
+  color: var(--neutral-400);
+  transition: color var(--transition);
+}
+
+.footer-col a:hover {
+  color: var(--color-primary);
+}
+
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--neutral-400);
+  font-size: 0.875rem;
+}
+
+.contact-info svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto 2rem auto;
-  padding-top: 2rem;
+  padding: 1.5rem 0;
+}
+
+.footer-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.copyright {
+  font-size: 0.8125rem;
+  color: var(--neutral-500);
 }
 
 .legal-links {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
-.legal-links a,
-.back-to-top a {
-  text-decoration: none; /* Pas de soulignement par défaut */
-  font-size: 0.9rem;
-  color: #1a1a1a;
+.legal-links a {
+  font-size: 0.8125rem;
+  color: var(--neutral-500);
+  transition: color var(--transition);
 }
 
-/* Soulignement du lien "Remonter" comme sur l'image */
-.back-to-top a {
-  text-decoration: underline;
-  font-weight: 500;
+.legal-links a:hover {
+  color: var(--color-primary);
+}
+
+.back-to-top {
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
-  border: 2px solid #000000ff;
-  border-radius: 50rem;
-  padding: 0.3rem;
+  justify-content: center;
+  background: var(--neutral-800);
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--neutral-400);
+  cursor: pointer;
+  transition: all var(--transition);
 }
 
-.copyright {
-  text-align: left;
-  max-width: 1200px;
-  margin: 0 auto;
-  font-size: 0.8rem;
+.back-to-top:hover {
+  background: var(--color-primary);
+  color: var(--neutral-900);
 }
 
-.btn-secondary {
-  color: #000000ff !important;
-  border: 2px solid #000000ff !important;
-  font-weight: bold;
-  padding: 0.8rem 2rem;
-  font-size: 1.1rem;
-  background-color: transparent;
-}
-.btn-secondary:hover {
-  background-color: #000 !important;
-  color: #fbc02b !important;
-}
-
-/* RESPONSIVE MOBILE */
-@media (max-width: 768px) {
-  .footer-container {
-    grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-    text-align: center; /* Tout centré sur mobile */
-    gap: 1rem;
-    margin-bottom: 2rem;
+@media (max-width: 1024px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
-  .footer-bottom {
-    flex-direction: column;
-    gap: 1.5rem;
+
+  .footer-brand {
+    max-width: none;
     text-align: center;
   }
-  .legal-links {
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+  }
+
+  .contact-info li {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-footer {
+    padding-top: 3rem;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-bottom-left {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .legal-links {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 </style>

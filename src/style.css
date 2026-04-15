@@ -1,110 +1,195 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+/* ============================================
+   DESIGN SYSTEM - JOURDREN TP
+   Style: shadcn/ui inspired
+   Palette: Or + Anthracite
+   ============================================ */
+
+:root {
+  /* Couleurs principales */
+  --color-primary: #D4A012;
+  --color-primary-light: #E8B82A;
+  --color-primary-dark: #B8890F;
+  --color-primary-subtle: #FDF6E3;
+  
+  /* Couleurs neutres */
+  --color-black: #09090b;
+  --color-anthracite: #18181b;
+  --color-white: #ffffff;
+  
+  /* Neutral (shadcn style) */
+  --neutral-50: #fafafa;
+  --neutral-100: #f4f4f5;
+  --neutral-200: #e4e4e7;
+  --neutral-300: #d4d4d8;
+  --neutral-400: #a1a1aa;
+  --neutral-500: #71717a;
+  --neutral-600: #52525b;
+  --neutral-700: #3f3f46;
+  --neutral-800: #27272a;
+  --neutral-900: #18181b;
+  --neutral-950: #09090b;
+  
+  /* Typographie */
+  --font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Bordures (shadcn style - plus arrondies) */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-full: 9999px;
+  
+  /* Ombres (shadcn style - très subtiles) */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  /* Border */
+  --border-color: var(--neutral-200);
+  
+  /* Transitions */
+  --transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
-  background-color: #fff;
-  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
+  font-family: var(--font-family);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--neutral-700);
+  background-color: var(--color-white);
 }
 
-/* Tailles de texte par défaut (desktop) */
-h1 {
-  font-size: 2.5rem !important;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--neutral-900);
+  letter-spacing: -0.025em;
 }
 
-h2 {
-  font-size: 2rem !important;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-h3 {
-  font-size: 1.5rem !important;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-h4 {
-  font-size: 1.25rem !important;
+/* ============================================
+   BUTTONS (shadcn style)
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
 }
 
-h5 {
-  font-size: 1.1rem !important;
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--neutral-900);
 }
 
-h6 {
-  font-size: 1rem !important;
+.btn-primary:hover {
+  background: var(--color-primary-light);
 }
 
-p {
-  font-size: 1rem !important;
+.btn-secondary {
+  background: var(--neutral-900);
+  color: var(--color-white);
 }
 
-/* Tablettes */
-@media (max-width: 1024px) {
-  h1 {
-    font-size: 2rem !important;
-  }
-
-  h2 {
-    font-size: 1.75rem !important;
-  }
-
-  h3 {
-    font-size: 1.35rem !important;
-  }
-
-  h4 {
-    font-size: 1.15rem !important;
-  }
+.btn-secondary:hover {
+  background: var(--neutral-800);
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.75rem !important;
-  }
-
-  h2 {
-    font-size: 1.5rem !important;
-  }
-
-  h3 {
-    font-size: 1.25rem !important;
-  }
-
-  h4 {
-    font-size: 1.1rem !important;
-  }
-
-  h5 {
-    font-size: 1rem !important;
-  }
-
-  p {
-    font-size: 0.95rem !important;
-  }
+.btn-outline {
+  background: transparent;
+  color: var(--neutral-900);
+  border: 1px solid var(--border-color);
 }
 
-/* Petit mobile */
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.5rem !important;
-  }
+.btn-outline:hover {
+  background: var(--neutral-100);
+}
 
-  h2 {
-    font-size: 1.3rem !important;
-  }
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
 
-  h3 {
-    font-size: 1.15rem !important;
-  }
+.btn-ghost {
+  background: transparent;
+  color: var(--neutral-600);
+}
 
-  h4 {
-    font-size: 1rem !important;
-  }
+.btn-ghost:hover {
+  background: var(--neutral-100);
+  color: var(--neutral-900);
+}
 
-  p {
-    font-size: 0.9rem !important;
-  }
+/* ============================================
+   CARDS (shadcn style)
+   ============================================ */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.card:hover {
+  border-color: var(--neutral-300);
+}
+
+/* ============================================
+   BADGE (shadcn style)
+   ============================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  background: var(--neutral-100);
+  color: var(--neutral-600);
+}
+
+.badge-primary {
+  background: var(--color-primary-subtle);
+  color: var(--color-primary-dark);
 }

@@ -94,101 +94,112 @@ const projects = ref([
 
 <style scoped>
 .page-container {
-    padding-bottom: 4rem;
+  padding-bottom: 4rem;
+  background: var(--color-white);
 }
 
 .page-header {
   text-align: center;
-  padding: 5rem 1rem 1rem 1rem;
-  background:#fbc02b;
-  margin-bottom: 2rem;
-  color: #000;
+  padding: 8rem 1.5rem 4rem;
+  background: var(--neutral-900);
 }
 
 .page-header h1 {
-  font-weight: 800;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-size: 2.25rem;
+  color: var(--color-white);
+  letter-spacing: -0.025em;
 }
 
-/* --- GRILLE --- */
+.page-header p {
+  font-size: 1rem;
+  color: var(--neutral-400);
+}
+
+/* Grille */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1300px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 3rem 1.5rem;
 }
 
-/* --- LA CARTE (Conteneur Relatif) --- */
+/* Carte projet */
 .project-card {
-  position: relative; /* Indispensable pour que l'image absolute reste dedans */
-  height: 400px;      /* On fixe une hauteur car il n'y a plus d'image qui pousse le contenu */
-  border-radius: 12px;
-  overflow: hidden;   /* Coupe l'image qui dépasse */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  position: relative;
+  height: 360px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
   cursor: pointer;
-  transition: transform 0.3s ease;
-  
-  /* Flex pour positionner le texte en bas */
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Pousse le texte vers le bas */
+  justify-content: flex-end;
+  transition: border-color var(--transition);
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  border-color: var(--neutral-300);
 }
 
-/* --- L'IMAGE EN ARRIÈRE-PLAN --- */
+/* Media en arrière-plan */
 .bg-media {
-  position: absolute; /* Sort du flux normal */
-  top: 0;
-  left: 0;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Remplit tout l'espace */
-  z-index: 0; /* Tout au fond */
-  transition: transform 0.6s ease;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 0.4s ease;
 }
 
-/* Effet de zoom lent au survol */
 .project-card:hover .bg-media {
-    transform: scale(1.1);
+  transform: scale(1.03);
 }
 
-/* --- LE TEXTE ET LE DÉGRADÉ --- */
+/* Info projet */
 .project-info {
   position: relative;
-  z-index: 1; /* Par dessus l'image */
-  padding: 2rem;
-  color: white; /* Texte blanc obligatoire sur photo */
-  
-  /* Le dégradé magique pour la lisibilité */
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, transparent 100%);
-  
+  z-index: 1;
+  padding: 1.5rem;
   width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 70%, transparent 100%);
 }
 
 .project-info h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0;
+  letter-spacing: -0.01em;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
 .project-info p {
-  font-size: 1rem;
-  color: #ddd; /* Gris très clair */
+  font-size: 0.875rem;
+  color: var(--neutral-300);
   margin: 0;
 }
 
 @media (max-width: 768px) {
+  .page-header {
+    padding: 6rem 1.5rem 2.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.75rem;
+  }
+
   .projects-grid {
-    padding: 0;
+    padding: 2rem 1rem;
+    gap: 1rem;
+  }
+
+  .project-card {
+    height: 280px;
   }
 }
 </style>

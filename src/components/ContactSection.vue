@@ -1,44 +1,62 @@
 <script setup>
-// Pas de script complexe nécessaire ici, c'est surtout de la mise en page
 </script>
 
 <template>
     <section class="contact-section">
-        
-        <h2 class="main-title">Nous contacter</h2>
-
-        <div class="info-grid">
-            
-            <div class="info-col">
-                <h3 class="col-title">Adresse Locaux</h3>
-                <p>Route du Manoir,</p>
-                <p>27460 Alizay</p>
+        <div class="contact-container">
+            <div class="contact-header">
+                <span class="section-badge">Contact</span>
+                <h2 class="section-title">Parlons de votre projet</h2>
+                <p class="section-subtitle">
+                    Contactez-nous pour un devis gratuit ou pour toute question
+                </p>
             </div>
 
-            <div class="info-col">
-                <h3 class="col-title">Contact</h3>
-                <p>02 32 92 24 29</p>
-                <p>06 18 04 30 08</p>
-                <br>
-                <p><a href="https://www.jourdren-tp.com/a-propos" style="color: black; text-decoration: none;">https://www.jourdren-tp.com/a-propos</a></p>
-                
-                <div class="social-icons">
-                    <a class="pi pi-facebook" style="font-size: 1.2rem; color: black; text-decoration: none;" href="https://www.facebook.com/profile.php?id=100077686390667"></a>
-                    <a class="pi pi-instagram" style="font-size: 1.2rem; color: black; text-decoration: none;" href="https://www.instagram.com/yourprofile"></a>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="contact-card-title">Adresse</h3>
+                    <p class="contact-card-text">Route du Manoir</p>
+                    <p class="contact-card-text">27460 Alizay</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <h3 class="contact-card-title">Téléphone</h3>
+                    <p class="contact-card-text">02 32 92 24 29</p>
+                    <p class="contact-card-text">06 18 04 30 08</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3 class="contact-card-title">Horaires</h3>
+                    <p class="contact-card-text">Lun - Ven : 8h - 18h</p>
+                    <p class="contact-card-text secondary">Sam - Dim : Fermé</p>
                 </div>
             </div>
 
-            <div class="info-col">
-                <h3 class="col-title">Heures d'ouverture</h3>
-                <div class="hours-grid">
-                    <span>Lundi</span> <span>8 h - 18 h</span>
-                    <span>Mardi</span> <span>8 h - 18 h</span>
-                    <span>Mercredi</span> <span>8 h - 18 h</span>
-                    <span>Jeudi</span> <span>8 h - 18 h</span>
-                    <span>Vendredi</span> <span>8 h - 18 h</span>
-                </div>
+            <div class="contact-cta">
+                <RouterLink to="/contact" class="btn btn-primary btn-lg">
+                    Demander un devis gratuit
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </RouterLink>
             </div>
-
         </div>
 
         <div class="map-container">
@@ -52,103 +70,159 @@
                 class="google-map"
             ></iframe>
         </div>
-
     </section>
 </template>
 
 <style scoped>
 .contact-section {
-    background-color: white;
-    padding: 4rem 2rem; /* Pas de padding en bas car la map colle au bord si tu veux */
-    color: #1a1a1a;
+    background: var(--neutral-50);
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.section-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--neutral-900);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.025em;
+}
+
+.section-subtitle {
+    font-size: 0.9375rem;
+    color: var(--neutral-600);
+    line-height: 1.6;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+}
+
+.contact-card {
+    background: var(--color-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    text-align: center;
+    transition: border-color var(--transition);
+}
+
+.contact-card:hover {
+    border-color: var(--neutral-300);
+}
+
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary-subtle);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    color: var(--color-primary-dark);
+}
+
+.contact-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--neutral-900);
+    margin-bottom: 0.625rem;
+}
+
+.contact-card-text {
+    font-size: 0.875rem;
+    color: var(--neutral-600);
+    margin-bottom: 0.25rem;
+}
+
+.contact-card-text.secondary {
+    color: var(--neutral-400);
+}
+
+.contact-cta {
     text-align: center;
 }
 
-.main-title {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 4rem;
-    color: black;
-}
-
-/* GRILLE DES 3 COLONNES */
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto 5rem auto;
-    text-align: left; /* Texte aligné à gauche dans les colonnes comme sur l'image */
-}
-
-/* Sur mobile, on centre tout pour faire plus joli */
-@media (max-width: 768px) {
-    .info-grid {
-        text-align: center;
-        gap: 1rem;
-        margin-bottom: 3rem;
-    }
-    .hours-grid {
-        justify-content: center;
-    }
-    .main-title {
-        font-size: 2.5rem;
-        margin-top: 0;
-        margin-bottom: 2rem;
-    }
-}
-
-.col-title {
-    color: #fbc02b; /* Le fameux Jaune Moutarde */
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-}
-
-.info-col p {
-    margin: 0.5rem 0;
-    font-size: 1.1rem;
-    color: #444;
-}
-
-.social-icons {
-    margin-top: 1.5rem;
-    display: flex;
-    gap: 1rem;
-    /* Si aligné à gauche : */
-    justify-content: flex-start; 
-}
-@media (max-width: 768px) {
-    .social-icons { justify-content: center; }
-}
-
-.social-icons i {
-    cursor: pointer;
-    transition: color 0.2s;
-    color: black;
-}
-.social-icons i:hover {
-    color: #fbc02b;
-}
-
-/* GRILLE DES HORAIRES */
-.hours-grid {
-    display: grid;
-    grid-template-columns: 100px 1fr; /* Colonne fixe pour les jours */
+.contact-cta .btn {
+    display: inline-flex;
+    align-items: center;
     gap: 0.5rem;
-    font-size: 1.1rem;
-    color: #444;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--neutral-900);
+    background: var(--color-primary);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: background var(--transition);
 }
 
-/* LA CARTE */
+.contact-cta .btn:hover {
+    background: var(--color-primary-light);
+}
+
 .map-container {
     width: 100%;
-    /* On enlève les marges pour qu'elle touche les bords si souhaité, 
-       sinon tu peux mettre un max-width */
-    filter: grayscale(100%); /* Optionnel : rend la carte grise pour le style "Pro" */
+    filter: grayscale(60%);
+    transition: filter 0.3s ease;
+}
+
+.map-container:hover {
+    filter: grayscale(0%);
 }
 
 .google-map {
-    display: block; /* Enlève l'espace blanc sous l'iframe */
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 4rem 1.5rem;
+    }
+
+    .contact-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 1.625rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+    }
 }
 </style>
