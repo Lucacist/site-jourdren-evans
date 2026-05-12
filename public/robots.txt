@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://site-jourdren-evans.vercel.app/sitemap.xml
+Sitemap: https://www.jourdren-tp.com/sitemap.xml
